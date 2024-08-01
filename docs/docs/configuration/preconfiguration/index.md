@@ -3,7 +3,13 @@
 
 !!! Note 
 
-      This process is not required if you do not want to preconfigure Tracardi installation.
+    This process is not required if you do not want to preconfigure Tracardi installation. Preconfiguration is 
+    done for multitenant installation when you want to preconfigure each tenant's instance with some event-sources,
+    resources and destinations.
+
+!!! Info
+
+    This feature is available from version 1.0.1
 
 ## Overview
 

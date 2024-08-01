@@ -145,7 +145,6 @@ nav:
           - getting_started/codings/event_validation.md
           - getting_started/codings/searching.md
       - Tracardi Processes:
-          - getting_started/processes/preconfiguration/index.md
           - getting_started/processes/integration/index.md
           - Types of Integration:
               - getting_started/processes/integration/api/index.md
@@ -461,6 +460,7 @@ nav:
       - configuration/index.md
       - configuration/best_practises.md
       - configuration/multi-tenant/index.md
+      - getting_started/processes/preconfiguration/index.md
       - Scaling:
           - configuration/scaling/data_partitioning.md
           - configuration/scaling/installation_scaling.md
