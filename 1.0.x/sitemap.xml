@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://manual.tracardi.com/1.0.x/configuration/preconfiguration/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://manual.tracardi.com/1.0.x/configuration/scaling/data_partitioning/</loc>
          <lastmod>2024-08-01</lastmod>
          <changefreq>daily</changefreq>
@@ -697,11 +702,6 @@
     </url>
     <url>
          <loc>https://manual.tracardi.com/1.0.x/getting_started/processes/integration/webhook/</loc>
-         <lastmod>2024-08-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://manual.tracardi.com/1.0.x/getting_started/processes/preconfiguration/</loc>
          <lastmod>2024-08-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
