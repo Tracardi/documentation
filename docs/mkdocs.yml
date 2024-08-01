@@ -460,7 +460,7 @@ nav:
       - configuration/index.md
       - configuration/best_practises.md
       - configuration/multi-tenant/index.md
-      - getting_started/processes/preconfiguration/index.md
+      - configuration/preconfiguration/index.md
       - Scaling:
           - configuration/scaling/data_partitioning.md
           - configuration/scaling/installation_scaling.md
