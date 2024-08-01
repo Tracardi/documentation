@@ -53,9 +53,9 @@ extra:
       link: https://github.com/Tracardi/tracardi
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/@tracardi
-copyright: Copyright &copy; 2020 - 2021 Tracardi
-repo_url: https://github.com/tracardi/tracardi-api
-repo_name: tracardi/tracardi-api
+copyright: Copyright &copy; 2020 - 2024 Tracardi
+repo_url: https://github.com/tracardi/documentation
+repo_name: tracardi/documentation
 nav:
   - index.md
   - Getting started:
