@@ -1,0 +1,49 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="21">
+            <item index="0" class="java.lang.String" itemvalue="tensorflow" />
+            <item index="1" class="java.lang.String" itemvalue="opencv-python" />
+            <item index="2" class="java.lang.String" itemvalue="paho-mqtt" />
+            <item index="3" class="java.lang.String" itemvalue="imutils" />
+            <item index="4" class="java.lang.String" itemvalue="pillow" />
+            <item index="5" class="java.lang.String" itemvalue="keras" />
+            <item index="6" class="java.lang.String" itemvalue="beautifulsoup4" />
+            <item index="7" class="java.lang.String" itemvalue="python.annotator-enums" />
+            <item index="8" class="java.lang.String" itemvalue="python.kergen" />
+            <item index="9" class="java.lang.String" itemvalue="python.annotator-smart" />
+            <item index="10" class="java.lang.String" itemvalue="python.annotator-dbs" />
+            <item index="11" class="java.lang.String" itemvalue="python.annotator-nlp" />
+            <item index="12" class="java.lang.String" itemvalue="elasticsearch-dsl" />
+            <item index="13" class="java.lang.String" itemvalue="kombu" />
+            <item index="14" class="java.lang.String" itemvalue="python.kuptoo-queue" />
+            <item index="15" class="java.lang.String" itemvalue="python.kuptoo-annotator" />
+            <item index="16" class="java.lang.String" itemvalue="python.dataset" />
+            <item index="17" class="java.lang.String" itemvalue="sqlite3" />
+            <item index="18" class="java.lang.String" itemvalue="tracardi" />
+            <item index="19" class="java.lang.String" itemvalue="elasticemail-python" />
+            <item index="20" class="java.lang.String" itemvalue="sqlalchemy" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N803" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="tracardi_day_night_split.tests.test_day_night_split.day_night_split" />
+          <option value="app.domain.twitter.twitter_event_payload.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
