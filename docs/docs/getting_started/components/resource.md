@@ -60,7 +60,10 @@ Here’s an example of how an API resource might be configured and used in Traca
 2. **Using the Resource in a Plugin**:
     ```python
     import requests
-    from tracardi.service.storage.driver.elastic import resource as resource_db
+    from tracardi.service.domain import resource as resource_db
+    from tracardi.service.plugin.runner import ActionRunner
+    from tracardi.service.plugin.domain.result import Result
+    from tracardi.domain.resources.api_key import ApiKey
 
     class ExampleApiPlugin(ActionRunner):
         config: dict
@@ -69,7 +72,7 @@ Here’s an example of how an API resource might be configured and used in Traca
         async def set_up(self, config):
             self.config = config
             resource = await resource_db.load(config['resource']['id'])
-            self.credentials = resource.credentials
+            self.credentials = resource.credentials.get_credentials(self, output=ApiKey)
 
         async def run(self, payload: dict, in_edge=None):
             response = await self._call_api()
