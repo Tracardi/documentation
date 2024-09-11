@@ -5,7 +5,8 @@ process are quite similar to the open-source installation.
 
 ## Prerequisites
 
-To set up Commercial Tracardi, you'll need access to DockerHub token and a valid commercial license key. This information will
+To set up Commercial Tracardi, you'll need access to DockerHub token and a valid commercial license key. This
+information will
 be sent to you after the purchase of the commercial license.
 
 ## Docker compose installation
@@ -18,4 +19,11 @@ is intended for testing purposes only, as it doesn't configure and scale the dep
 ## Kubernetes' installation with helm
 
 1. **[Installation with Helm on K8S](helm/index.md):** Automates installation of all required Tracardi components.
+
+## Settings
+
+1. **[Open-source version env variables](../opensource/env_variables.md):** Detailed information of open-source version
+   environment variables.
+2. **[Commercial version env variables](env_variables.md):** Detailed information of commercial version environment
+   variables.
 
