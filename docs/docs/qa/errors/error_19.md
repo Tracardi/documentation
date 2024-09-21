@@ -24,9 +24,12 @@ is shared.
 
 ### Solutions:
 
-- You can change the **Referrer Policy** in your HTTP headers or meta tags to a more restrictive policy, such
-  as `strict-origin-when-cross-origin` or `no-referrer`, to avoid sending referrer information in cross-site requests.
-- Ensure that the domains involved in the requests are using secure HTTPS protocols.
-
 - Connect tracardi to some subdomain of your website domain, if you domain is abc.com create a subdomain
   tracardi.abc.com and point it to tracardi API. This way there will be no cross-site requests.
+
+- You can change the **Referrer Policy** in your HTTP headers or meta tags to a more restrictive policy, such
+  as `strict-origin-when-cross-origin` or `no-referrer`, to avoid sending referrer information in cross-site requests.
+  This is the solution that will work only with your browser.
+
+- Ensure that the domains involved in the requests are using secure HTTPS protocols.
+
