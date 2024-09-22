@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.30">
     
     
       
@@ -17328,11 +17328,13 @@ user interactions on your website. Here’s a detailed description of the functi
 </code></pre></div>
 <h3 id="parameters">Parameters</h3>
 <ol>
-<li><strong><code>eventType</code></strong> (string): The type of event you want to track. This is a mandatory parameter and should be a string representing the name of the event.</li>
+<li><strong><code>eventType</code></strong> (string): The type of event you want to track. This is a mandatory parameter and should be a string
+   representing the name of the event.</li>
 </ol>
 <p><strong>Example:</strong> <code>"page-view"</code>, <code>"purchase-order"</code>, <code>"button-click"</code>, etc.</p>
 <ol>
-<li><strong><code>eventProperties</code></strong> (object): An object containing key-value pairs that represent the properties of the event. This parameter is optional but typically used to provide additional context or data about the event.</li>
+<li><strong><code>eventProperties</code></strong> (object): An object containing key-value pairs that represent the properties of the event. This
+   parameter is optional but typically used to provide additional context or data about the event.</li>
 </ol>
 <p><strong>Example:</strong>
    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
@@ -17342,7 +17344,8 @@ user interactions on your website. Here’s a detailed description of the functi
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
 </code></pre></div></p>
 <ol>
-<li><strong><code>options</code></strong> (object): An optional object that can include additional settings or metadata for the event. This can include properties such as <code>profile</code>, <code>session</code>, or other tracking options.</li>
+<li><strong><code>options</code></strong> (object): An optional object that can include additional settings or metadata for the event. This can
+   include properties such as <code>profile</code>, <code>session</code>, or other tracking options.</li>
 </ol>
 <p><strong>Example:</strong>
    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
@@ -17356,18 +17359,22 @@ user interactions on your website. Here’s a detailed description of the functi
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">title</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">});</span>
 </code></pre></div>
-<p>In this example:
-- <code>"page-view"</code> is the event type.
-- The event properties include the current page URL and the document title.</p>
+<p>In this example:</p>
+<ul>
+<li><code>"page-view"</code> is the event type.</li>
+<li>The event properties include the current page URL and the document title.</li>
+</ul>
 <div class="highlight"><span class="filename">Tracking a purchase order with additional properties</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">tracker</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s2">&quot;purchase-order&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="s2">&quot;product&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sun glasses&quot;</span><span class="p">,</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="s2">&quot;price&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">13.45</span><span class="p">,</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="s2">&quot;category&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Accessories&quot;</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">});</span>
 </code></pre></div>
-<p>In this example:
-- <code>"purchase-order"</code> is the event type.
-- The event properties include product details such as name, price, and category.</p>
+<p>In this example:</p>
+<ul>
+<li><code>"purchase-order"</code> is the event type.</li>
+<li>The event properties include product details such as name, price, and category.</li>
+</ul>
 <div class="highlight"><span class="filename">Using Options for Profile and Immediate Event Sending</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">tracker</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s2">&quot;button-click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="s2">&quot;button-id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;subscribe-button&quot;</span><span class="p">,</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="s2">&quot;button-text&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Subscribe Now&quot;</span>
@@ -17375,15 +17382,19 @@ user interactions on your website. Here’s a detailed description of the functi
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="s2">&quot;fire&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">});</span>
 </code></pre></div>
-<p>In this example:
-- <code>"button-click"</code> is the event type.
-- The event properties include the button ID and text.
-- The <code>options</code> object includes a specific profile ID and the <code>fire</code> property set to <code>true</code>, indicating the event should be sent immediately.</p>
+<p>In this example:</p>
+<ul>
+<li><code>"button-click"</code> is the event type.</li>
+<li>The event properties include the button ID and text.</li>
+<li>The <code>options</code> object includes a specific profile ID and the <code>fire</code> property set to <code>true</code>, indicating the event should
+  be sent immediately.</li>
+</ul>
 <h1 id="parts-of-events">Parts of Events</h1>
 <h2 id="event-type">Event type</h2>
 <p>Event type is a crucial aspect of defining events in Tracardi. It refers to the name that distinguishes events from each
 other. For example, a <code>purchase-order</code> event provides information about an order, while a <code>page-view</code> event signifies a
-viewed page. There are different event types in Tracardi please refer to <a href="../../../../components/event/#types-of-events">event types</a> for more information.</p>
+viewed page. There are different event types in Tracardi please refer
+to <a href="../../../../components/event/#types-of-events">event types</a> for more information.</p>
 <p>Defining an appropriate event type is essential to ensure proper categorization and processing of events within
 Tracardi. It allows you to effectively organize and analyze event data based on their type.</p>
 <div class="admonition importance of event type">
@@ -17404,7 +17415,8 @@ captured accurately.</p>
 <h2 id="event-options">Event options</h2>
 <p>Event options in Tracardi allow you to define the behavior of events and add contextual information associated with an
 event. When events are triggered using the Tracardi JavaScript snippet, they automatically include default context
-information, such as browser information and metadata, to provide additional details about the event.</p>
+information, such as browser information and metadata, to provide additional details about the event. To
+understand <a href="../general/">how the browser events are collected read this</a>.</p>
 <h3 id="context">Context</h3>
 <p>To add context add <code>context</code> kay and include it in configuration part (third parameter) of the <code>window.tracker.track</code></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
@@ -17502,7 +17514,8 @@ indicates that the event should be sent as a beacon event.</p>
 <p>In the above example, the asBeacon option is set to true, indicating that the "out-link-clicked" event should be sent as
 a beacon event, even if the customer leaves the page.</p>
 <p>Beacon events can be useful in scenarios where you want to track user interactions that may occur when user leaves the
-webpage, such as form submissions, redirect button clicks, or other events that may happen after the user has navigated away from
+webpage, such as form submissions, redirect button clicks, or other events that may happen after the user has navigated
+away from
 the page.</p>
 <h1 id="triggering-on-user-actions">Triggering on user actions</h1>
 <h2 id="sending-event-on-demand">Sending event on demand</h2>
@@ -17514,9 +17527,9 @@ Sending Events in Real-Time</p>
 <p>To send events in real-time, simply set the <code>fire</code> parameter to <code>true</code> when making API requests or using the Tracardi
 JavaScript snippet on your web page. This will bypass the event queue and send the events without any delay.</p>
 <p>This feature is particularly useful in scenarios where real-time data processing is critical, such as tracking user
-interactions, capturing user behavior, and implementing dynamic marketing strategies. </p>
+interactions, capturing user behavior, and implementing dynamic marketing strategies.</p>
 <h3 id="example-breaking-the-event-queue">Example: Breaking the Event Queue</h3>
-<p>In some cases, you may need to break the event queue and trigger an event immediately upon a certain event type. 
+<p>In some cases, you may need to break the event queue and trigger an event immediately upon a certain event type.
 You can do this by setting the fire parameter to true in your JavaScript code, as shown in the example
 below:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Example where we break the event queue</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
@@ -17537,12 +17550,12 @@ onClick event to a button that sends an event when clicked:</p>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
 <span class="normal"><a href="#__codelineno-13-4">4</a></span>
 <span class="normal"><a href="#__codelineno-13-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">testClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">     </span><span class="nb">window</span><span class="p">.</span><span class="nx">tracker</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s2">&quot;page-view&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;view&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">});</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">testClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">       </span><span class="nb">window</span><span class="p">.</span><span class="nx">tracker</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s2">&quot;page-view&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;view&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">});</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>Please note that in this case, the event is recorded in the console but not sent to Tracardi by default. </p>
+<p>Please note that in this case, the event is recorded in the console but not sent to Tracardi by default.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>[Tracker] Event track 
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Object { type: &quot;track&quot;, event: &quot;page-view&quot;, properties: {…}, options: {}, userId: null, anonymousId: &quot;642aa4a6-9a48-4c08-8fd5-f0772415c824&quot;, meta: {…} }
 </code></pre></div>
@@ -17553,9 +17566,9 @@ parameter to the window.tracker.track function, as shown in the example below:</
 <span class="normal"><a href="#__codelineno-15-3">3</a></span>
 <span class="normal"><a href="#__codelineno-15-4">4</a></span>
 <span class="normal"><a href="#__codelineno-15-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">testClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">     </span><span class="nb">window</span><span class="p">.</span><span class="nx">tracker</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s2">&quot;page-view&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;view&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;fire&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span><span class="w"> </span><span class="c1">// (1)</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">testClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">       </span><span class="nb">window</span><span class="p">.</span><span class="nx">tracker</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s2">&quot;page-view&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;view&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;fire&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span><span class="w"> </span><span class="c1">// (1)</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <ol>
@@ -17672,6 +17685,8 @@ parameter to the window.tracker.track function, as shown in the example below:</
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../../../../javascripts/tracardi.js"></script>
       
     
   </body>
