@@ -1,3 +1,8 @@
+# To push latest update
+
+mike deploy --push --update-aliases 1.0.x latest
+
+
 # Install
 ```
 pip install -r docs/requirements.txt 
