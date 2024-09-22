@@ -8,7 +8,18 @@ var options = {
             },
             source: {
                 id: "1ffc4c63-0dc4-4d15-b2f1-1679c15f630d"
-            }
+            },
+            context: {
+				browser: true,
+				page: true,
+				session: true,
+				storage:true,
+				screen: true,
+				performance: false,
+				location: true,
+                utm: true,
+                tracardiPass: true
+			},
         }
     }
 
