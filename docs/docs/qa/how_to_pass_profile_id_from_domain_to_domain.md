@@ -40,11 +40,11 @@ To enable the "passing of profile ID" feature:
 const options = {
   tracker: {
     url: {
-      script: 'http://localhost:8686/tracker',
-      api: 'http://localhost:8686'
+      script: '//mydomain.com/tracker',
+      api: '//mydomain.com'
     },
     source: {
-      id: "3ee63fc6-490a-4fd8-bfb3-bf0c8c8d3387"
+      id: "some-source-id"
     },
     settings: {
       trackExternalLinks: ['example.com', 'tracardi.com']
@@ -61,3 +61,25 @@ const options = {
    a. Checks for valid referrer data (profile ID and source ID).
    b. If valid, marks for merging the referred profile with the existing local profile.
    c. Logs warnings for invalid profile or source IDs.
+
+4. Destination website must have tracardi javascript snippet connected and be configured to accept the passed parameters.
+
+   Here is the example of the configuration.
+
+```javascript title="Example configuration of destination web site, e.g example.com" linenums="1" hl_lines="10-12"
+var options = {
+     tracker: {
+         url: {
+             script: '//mydomain.com/tracker',
+             api: '//mydomain.com'
+         },
+         source: {
+             id: "some-source-id"
+         },
+         context: {
+             tracardiPass: true
+			}
+     }
+}
+``
+   

@@ -1,4 +1,4 @@
-# Parametrized URL
+# Parametrized URL (Cross-domain profile linking)
 
 A parameterized link in Tracardi is a URL that contains specific parameters designed to track and identify user
 interactions and collect data effectively. These parameters help in associating the link click with a specific user
@@ -37,6 +37,11 @@ http://example.com/landing-page?__tr_pid=<profile-id>&__tr_src=<source-id>&__tr_
 http://example.com/landing-page?__tr_pid=12345&__tr_src=email_campaign&__tr_sid=67890
 ```
 
+!!! Tip
+
+   If tracardi javascript snippet is placed on the source and destination page adding parameters can be automated. 
+   See [Append profile ID to external links](../js/index.md#append-profile-id-to-external-links-tagging-links).
+
 ### Step 2: Use the Parameterized Link in Your Campaigns
 
 Embed this URL in your marketing campaigns, such as email newsletters, ads, or social media posts. When users click on
@@ -50,11 +55,36 @@ Ensure that Tracardi is configured to recognize and process these parameters:
     - Embed the Tracardi tracking script on your landing page. This script will capture the parameters and associate the
       interaction with the correct profile and session.
 
+
+!!! Note
+
+   The destination web site that the params will be sent must have the Tracardi javascript snipped installed and it must be configured
+   to accept incoming parameters.
+
+   This is the example of such configuration.
+
+   ```javascript title="Example configuration of destination web site, e.g example.com" linenums="1" hl_lines="10-12"
+   var options = {
+        tracker: {
+            url: {
+                script: '//mydomain.com/tracker',
+                api: '//mydomain.com'
+            },
+            source: {
+                id: "some-source-id"
+            },
+            context: {
+                tracardiPass: true
+               }
+        }
+   }
+   ```
+
 ## Example Use Case
 
 Let’s say you’re running an email campaign and want to track user interactions:
 
-1. **Email Content:**
+1. **E-mail Content:**
     - Include a parameterized link in your email:
    ```html
    <a href="http://example.com/landing-page?__tr_pid=abc123&__tr_src=email_campaign">Click here</a>

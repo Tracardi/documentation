@@ -22,7 +22,7 @@ Both methods use the Tracardi API.
 1. **[Redirected Links](redirect/index.md)**: This method involves creating
   special links that, when clicked, send information to Tracardi about the user and then redirect them to a specific page. The information is stored within the link itself.
 
-2. **[Parameterized Links](param/index.md)**: The second method involves adding
+2. **[Cross-domain Parameterized Links](param/index.md)**: The second method involves adding
   a parameter `__tr_pid` to an existing link. This parameter contains user information. When user visits the target
   page, the tracking script, that must exist on the target page, sends an event to Tracardi and use the
   parameter `__tr_pid` to identify the customer. 
