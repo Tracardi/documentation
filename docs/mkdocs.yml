@@ -3,6 +3,10 @@ site_description: Open-source Customer Data Platform
 site_url: https://manual.tracardi.com
 edit_uri: edit/1.0.x/docs/docs
 
+extra_javascript:
+  - javascripts/tracardi.js
+
+
 markdown_extensions:
   - admonition
   - abbr
