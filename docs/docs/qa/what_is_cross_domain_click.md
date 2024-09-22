@@ -28,7 +28,7 @@ another, maintaining continuity of customer identification across different owne
 
 !!! Tip
 
-   The destination web site musts have tracardi connected and tracker.context.tracardiPass set to true.
+      The destination web site musts have tracardi connected and tracker.context.tracardiPass set to true.
 
 This approach ensures consistent customer identification across your owned domains, improving user tracking and
 analytics capabilities.
