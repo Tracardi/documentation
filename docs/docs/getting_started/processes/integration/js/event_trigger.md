@@ -12,11 +12,13 @@ window.tracker.track(eventType, eventProperties, options);
 
 ### Parameters
 
-1. **`eventType`** (string): The type of event you want to track. This is a mandatory parameter and should be a string representing the name of the event.
+1. **`eventType`** (string): The type of event you want to track. This is a mandatory parameter and should be a string
+   representing the name of the event.
 
    **Example:** `"page-view"`, `"purchase-order"`, `"button-click"`, etc.
 
-2. **`eventProperties`** (object): An object containing key-value pairs that represent the properties of the event. This parameter is optional but typically used to provide additional context or data about the event.
+2. **`eventProperties`** (object): An object containing key-value pairs that represent the properties of the event. This
+   parameter is optional but typically used to provide additional context or data about the event.
 
    **Example:**
    ```javascript
@@ -27,7 +29,8 @@ window.tracker.track(eventType, eventProperties, options);
    }
    ```
 
-3. **`options`** (object): An optional object that can include additional settings or metadata for the event. This can include properties such as `profile`, `session`, or other tracking options.
+3. **`options`** (object): An optional object that can include additional settings or metadata for the event. This can
+   include properties such as `profile`, `session`, or other tracking options.
 
    **Example:**
    ```javascript
@@ -47,6 +50,7 @@ window.tracker.track("page-view", {
 ```
 
 In this example:
+
 - `"page-view"` is the event type.
 - The event properties include the current page URL and the document title.
 
@@ -59,6 +63,7 @@ window.tracker.track("purchase-order", {
 ```
 
 In this example:
+
 - `"purchase-order"` is the event type.
 - The event properties include product details such as name, price, and category.
 
@@ -72,9 +77,11 @@ window.tracker.track("button-click", {
 ```
 
 In this example:
+
 - `"button-click"` is the event type.
 - The event properties include the button ID and text.
-- The `options` object includes a specific profile ID and the `fire` property set to `true`, indicating the event should be sent immediately.
+- The `options` object includes a specific profile ID and the `fire` property set to `true`, indicating the event should
+  be sent immediately.
 
 # Parts of Events
 
@@ -82,7 +89,8 @@ In this example:
 
 Event type is a crucial aspect of defining events in Tracardi. It refers to the name that distinguishes events from each
 other. For example, a `purchase-order` event provides information about an order, while a `page-view` event signifies a
-viewed page. There are different event types in Tracardi please refer to [event types](../../../components/event.md#types-of-events) for more information.
+viewed page. There are different event types in Tracardi please refer
+to [event types](../../../components/event.md#types-of-events) for more information.
 
 Defining an appropriate event type is essential to ensure proper categorization and processing of events within
 Tracardi. It allows you to effectively organize and analyze event data based on their type.
@@ -110,7 +118,8 @@ captured accurately.
 
 Event options in Tracardi allow you to define the behavior of events and add contextual information associated with an
 event. When events are triggered using the Tracardi JavaScript snippet, they automatically include default context
-information, such as browser information and metadata, to provide additional details about the event.
+information, such as browser information and metadata, to provide additional details about the event. To
+understand [how the browser events are collected read this](general.md).
 
 ### Context
 
@@ -219,7 +228,8 @@ In the above example, the asBeacon option is set to true, indicating that the "o
 a beacon event, even if the customer leaves the page.
 
 Beacon events can be useful in scenarios where you want to track user interactions that may occur when user leaves the
-webpage, such as form submissions, redirect button clicks, or other events that may happen after the user has navigated away from
+webpage, such as form submissions, redirect button clicks, or other events that may happen after the user has navigated
+away from
 the page.
 
 # Triggering on user actions
@@ -236,11 +246,11 @@ To send events in real-time, simply set the `fire` parameter to `true` when maki
 JavaScript snippet on your web page. This will bypass the event queue and send the events without any delay.
 
 This feature is particularly useful in scenarios where real-time data processing is critical, such as tracking user
-interactions, capturing user behavior, and implementing dynamic marketing strategies. 
+interactions, capturing user behavior, and implementing dynamic marketing strategies.
 
 ### Example: Breaking the Event Queue
 
-In some cases, you may need to break the event queue and trigger an event immediately upon a certain event type. 
+In some cases, you may need to break the event queue and trigger an event immediately upon a certain event type.
 You can do this by setting the fire parameter to true in your JavaScript code, as shown in the example
 below:
 
@@ -264,14 +274,15 @@ onClick event to a button that sends an event when clicked:
 Where the **testClick** function sends an event.
 
 ```html title="Example" linenums="1"
+
 <script>
-  function testClick() {
-     window.tracker.track("page-view", {"view": 1});
-  }
+    function testClick() {
+       window.tracker.track("page-view", {"view": 1});
+    }
 </script>
 ```
 
-Please note that in this case, the event is recorded in the console but not sent to Tracardi by default. 
+Please note that in this case, the event is recorded in the console but not sent to Tracardi by default.
 
 ```
 [Tracker] Event track 
@@ -282,10 +293,11 @@ To trigger the event and send it to Tracardi immediately, you can add the `fire`
 parameter to the window.tracker.track function, as shown in the example below:
 
 ```html title="Example" linenums="1"
+
 <script>
-  function testClick() {
-     window.tracker.track("page-view", {"view": 1}, {"fire": true}); // (1)
-  }
+    function testClick() {
+       window.tracker.track("page-view", {"view": 1}, {"fire": true}); // (1)
+    }
 </script>
 ```
 

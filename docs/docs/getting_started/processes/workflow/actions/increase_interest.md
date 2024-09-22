@@ -48,6 +48,17 @@ Here's an example of how the JSON configuration for the Increase Interest plugin
 
 In this example, the value of the **travel** interest would be increased by **5.0** for the selected profile.
 
+If the interest key is an array of values or a comma separated values like:
+
+```json
+{
+  "interest": "travel,sports,tennis",
+  "value": "5.0"
+}
+```
+
+Several interests would be increased by the defined value.
+
 # Required Resources
 
 This plugin does not require any external resources to be configured.

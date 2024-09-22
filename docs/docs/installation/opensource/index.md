@@ -16,3 +16,8 @@ The open-source version of Tracardi can be installed by starting each Docker con
 configure each Docker container to connect to the dependent services accordingly:
 
 1. **[Docker one-by-one installation](docker/docker.md):** Description of all open-source Tracardi dockers.
+
+## Settings
+
+1. **[Open-source version env variables](env_variables.md):** Detailed information of open-source version
+   environment variables.

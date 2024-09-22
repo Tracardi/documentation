@@ -7,14 +7,15 @@ stages to ensure data is accurately processed and stored.
 
 ## Stages
 
-| Stage                 | Description                                                                                                                                                                                          |
-|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Source validation`   | Tracardi must have event source defined and enabled in the system.                                                                                                                                   |
-| `Event mapping`       | Tracardi can validate the event data schema, map event and reshape its schema if needed.                                                                                                             |
-| `Identity resolution` | At this point the profile is identified if it exists in the system or a new anonymous profile is created. Tracardi checks if the profile can be merged with other profiles that seems to be the same |
-| `Event reshaping`     | Tracardi can change the event schema if needed.                                                                                                                                                      |
-| `Event collection`    | Tracardi saves the event.                                                                                                                                                                            |
-| `Event routing`       | Tracardi reads a rule that defines which workflow, or destination should be triggered.                                                                                                               |
+| Stage                      | Description                                                                                                                                                                                          |
+|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Browser event collection` | Tracardi collects events on browser. [See the stages of collection](integration/js/general.md).                                                                                                      |
+| `Source validation`        | Tracardi must have event source defined and enabled in the system.                                                                                                                                   |
+| `Event mapping`            | Tracardi can validate the event data schema, map event and reshape its schema if needed.                                                                                                             |
+| `Identity resolution`      | At this point the profile is identified if it exists in the system or a new anonymous profile is created. Tracardi checks if the profile can be merged with other profiles that seems to be the same |
+| `Event reshaping`          | Tracardi can change the event schema if needed.                                                                                                                                                      |
+| `Event collection`         | Tracardi saves the event.                                                                                                                                                                            |
+| `Event routing`            | Tracardi reads a rule that defines which workflow, or destination should be triggered.                                                                                                               |
 
 ## Details
 
