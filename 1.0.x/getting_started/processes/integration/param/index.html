@@ -20,7 +20,7 @@
     
     
       
-        <title>Parametrized URL - Tracardi Documentation</title>
+        <title>Parametrized URL (Cross-domain profile linking) - Tracardi Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#parametrized-url" class="md-skip">
+        <a href="#parametrized-url-cross-domain-profile-linking" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Parametrized URL
+              Parametrized URL (Cross-domain profile linking)
             
           </span>
         </div>
@@ -17355,7 +17355,7 @@
   
 
 
-<h1 id="parametrized-url">Parametrized URL</h1>
+<h1 id="parametrized-url-cross-domain-profile-linking">Parametrized URL (Cross-domain profile linking)</h1>
 <p>A parameterized link in Tracardi is a URL that contains specific parameters designed to track and identify user
 interactions and collect data effectively. These parameters help in associating the link click with a specific user
 profile, session, or other relevant information.</p>
@@ -17383,6 +17383,11 @@ profile, session, or other relevant information.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>http://example.com/landing-page?__tr_pid=12345<span class="err">&amp;</span>__tr_src=email_campaign<span class="err">&amp;</span>__tr_sid=67890
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+</div>
+<p>If tracardi javascript snippet is placed on the source and destination page adding parameters can be automated. 
+   See <a href="../js/#append-profile-id-to-external-links-tagging-links">Append profile ID to external links</a>.</p>
 <h3 id="step-2-use-the-parameterized-link-in-your-campaigns">Step 2: Use the Parameterized Link in Your Campaigns</h3>
 <p>Embed this URL in your marketing campaigns, such as email newsletters, ads, or social media posts. When users click on
 these links, Tracardi will track their interactions using the provided parameters.</p>
@@ -17395,14 +17400,48 @@ these links, Tracardi will track their interactions using the provided parameter
 </ul>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>The destination web site that the params will be sent must have the Tracardi javascript snipped installed and it must be configured
+   to accept incoming parameters.</p>
+<p>This is the example of such configuration.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Example configuration of destination web site, e.g example.com</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">     </span><span class="nx">tracker</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">         </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">             </span><span class="nx">script</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;//mydomain.com/tracker&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">             </span><span class="nx">api</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;//mydomain.com&#39;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">         </span><span class="p">},</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">         </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">             </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;some-source-id&quot;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">         </span><span class="p">},</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="hll"><span class="w">         </span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="hll"><span class="w">             </span><span class="nx">tracardiPass</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+</span><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="hll"><span class="w">            </span><span class="p">}</span>
+</span><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">     </span><span class="p">}</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="example-use-case">Example Use Case</h2>
 <p>Let’s say you’re running an email campaign and want to track user interactions:</p>
 <ol>
 <li>
-<p><strong>Email Content:</strong></p>
+<p><strong>E-mail Content:</strong></p>
 <ul>
 <li>Include a parameterized link in your email:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://example.com/landing-page?__tr_pid=abc123&amp;__tr_src=email_campaign&quot;</span><span class="p">&gt;</span>Click here<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://example.com/landing-page?__tr_pid=abc123&amp;__tr_src=email_campaign&quot;</span><span class="p">&gt;</span>Click here<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </code></pre></div></li>
 </ul>
 </li>
