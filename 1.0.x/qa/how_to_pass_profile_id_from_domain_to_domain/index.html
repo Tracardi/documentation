@@ -17462,21 +17462,34 @@ user profiles across your different websites.</p>
 <li>Destination website must have tracardi javascript snippet connected and be configured to accept the passed parameters.</li>
 </ol>
 <p>Here is the example of the configuration.</p>
-<p><code>`javascript title="Example configuration of destination web site, e.g example.com" linenums="1" hl_lines="10-12"
-var options = {
-     tracker: {
-         url: {
-             script: '//mydomain.com/tracker',
-             api: '//mydomain.com'
-         },
-         source: {
-             id: "some-source-id"
-         },
-         context: {
-             tracardiPass: true
-            }
-     }
-}</code></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Example configuration of destination web site, e.g example.com</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">     </span><span class="nx">tracker</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">         </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">             </span><span class="nx">script</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;//mydomain.com/tracker&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">             </span><span class="nx">api</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;//mydomain.com&#39;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">         </span><span class="p">},</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">         </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">             </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;some-source-id&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">         </span><span class="p">},</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="hll"><span class="w">         </span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="hll"><span class="w">             </span><span class="nx">tracardiPass</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+</span><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="hll"><span class="w">            </span><span class="p">}</span>
+</span><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">     </span><span class="p">}</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 
 
 
