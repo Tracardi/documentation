@@ -39,8 +39,8 @@ http://example.com/landing-page?__tr_pid=12345&__tr_src=email_campaign&__tr_sid=
 
 !!! Tip
 
-   If tracardi javascript snippet is placed on the source and destination page adding parameters can be automated. 
-   See [Append profile ID to external links](../js/index.md#append-profile-id-to-external-links-tagging-links).
+      If tracardi javascript snippet is placed on the source and destination page adding parameters can be automated. 
+      See [Append profile ID to external links](../js/index.md#append-profile-id-to-external-links-tagging-links).
 
 ### Step 2: Use the Parameterized Link in Your Campaigns
 
@@ -58,27 +58,26 @@ Ensure that Tracardi is configured to recognize and process these parameters:
 
 !!! Note
 
-   The destination web site that the params will be sent must have the Tracardi javascript snipped installed and it must be configured
-   to accept incoming parameters.
-
-   This is the example of such configuration.
-
-   ```javascript title="Example configuration of destination web site, e.g example.com" linenums="1" hl_lines="10-12"
-   var options = {
-        tracker: {
-            url: {
-                script: '//mydomain.com/tracker',
-                api: '//mydomain.com'
-            },
-            source: {
-                id: "some-source-id"
-            },
-            context: {
-                tracardiPass: true
-               }
-        }
-   }
-   ```
+      The destination web site that the params will be sent must have the Tracardi javascript snipped installed and it must be configured to accept incoming parameters.
+   
+      This is the example of such configuration.
+   
+      ```javascript title="Example configuration of destination web site, e.g example.com" linenums="1" hl_lines="10-12"
+      var options = {
+           tracker: {
+               url: {
+                   script: '//mydomain.com/tracker',
+                   api: '//mydomain.com'
+               },
+               source: {
+                   id: "some-source-id"
+               },
+               context: {
+                   tracardiPass: true
+                  }
+           }
+      }
+      ```
 
 ## Example Use Case
 
