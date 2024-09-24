@@ -3,8 +3,8 @@
 var options = {
         tracker: {
             url: {
-                script: '//8504a.tracardi.com/tracker',
-                api: '//8504a.tracardi.com'
+                script: 'https://8504a.tracardi.com/tracker',
+                api: 'https://8504a.tracardi.com'
             },
             source: {
                 id: "1ffc4c63-0dc4-4d15-b2f1-1679c15f630d"
