@@ -1,4 +1,4 @@
-# How tenants API URL is build?
+# How tenants API URL is build and used?
 
 The tenant domain in Tracardi is primarily constructed using the **UUID** of the tenant, which is assigned during the
 tenant creation process. Here's a detailed explanation:
