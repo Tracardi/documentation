@@ -11,11 +11,29 @@
        multi: "yes"
    ```
 
-3. **Domain Requirement**: You need a domain connected to the Tracardi API. All subdomains must point to the Tracardi
+3. Configure the Tenant Management Service (TMS): Tracardi's multi-tenant setup relies on a dependent system called the
+   Tenant Management Service (TMS). You will need to provide the necessary configuration details for the TMS to
+   integrate it with Tracardi. Specifically, you need to provide the following to the tracardi-api docker/helmchart:
+
+- `MULTI_TENANT_MANAGER_URL`: This is the URL of the Tenant Management Service (TMS). Set it to the appropriate endpoint
+  where the TMS is running.
+- `MULTI_TENANT_MANAGER_API_KEY`: Provide the API key for the TMS. This is used for authentication and authorization
+  between Tracardi and the TMS.
+
+In helm chart installation this can be set in:
+
+```yaml
+secrets:
+  tms:
+    secretKey: "xxx"
+    apiKey: "yyy"
+```
+
+4. **Domain Requirement**: You need a domain connected to the Tracardi API. All subdomains must point to the Tracardi
    API.
 
-4. **Kubernetes Ingress Setup**: Ensure that the ingress routes all subdomains to both the public and private Tracardi
-   APIs:
+5. **Kubernetes Ingress Setup**: If your installation use k8s ensure that the ingress routes all subdomains to both the
+   public and private Tracardi APIs:
    ```yaml
      private:
        replicas: 1
@@ -33,7 +51,7 @@
          host: "*.your-domain.com"
    ```
 
-5. **Adding a Tenant**: Once Tracardi is installed, add a new tenant via the Tenant Management System (TMS) API.
+6. **Adding a Tenant**: Once Tracardi is installed, add a new tenant via the Tenant Management System (TMS) API.
 
 ### Creating a New Tenant via API
 
