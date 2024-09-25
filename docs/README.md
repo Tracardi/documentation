@@ -1,3 +1,8 @@
+# To push latest update
+
+mike deploy --push --update-aliases 1.0.x latest
+
+
 # Install
 ```
 pip install -r docs/requirements.txt 
@@ -5,7 +10,7 @@ pip install -r docs/requirements.txt
 
 
 # Test
-run in tracardi-api/docs
+run in documentation/docs
 ```
 docker run --rm -it -p 8100:8000 -v ${PWD}:/docs squidfunk/mkdocs-material:9.5.1
 ```
