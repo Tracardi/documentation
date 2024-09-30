@@ -64,8 +64,6 @@
 | `SYNC_PROFILE_TRACKS_MAX_REPEATS`        | Maximum number of profile track sync retries. Default: `10`.                                                                      |
 | `SYNC_PROFILE_TRACKS_WAIT`               | Wait time between profile track sync retries (seconds). Default: `1`.                                                             |
 | `STORAGE_DRIVER`                         | Storage driver. Default: `elastic`.                                                                                               |
-| `TRACARDI_PRO_HOST`                      | Tracardi Pro host. Default: `pro.tracardi.com`.                                                                                   |
-| `TRACARDI_PRO_PORT`                      | Tracardi Pro port. Default: `40000`.                                                                                              |
 | `LOGGING_LEVEL`                          | Application logging level. Default: `WARNING`.                                                                                    |
 | `SERVER_LOGGING_LEVEL`                   | Server logging level. Default: `WARNING`.                                                                                         |
 | `MULTI_TENANT`                           | Enable multi-tenant mode. Default: `no`.                                                                                          |
