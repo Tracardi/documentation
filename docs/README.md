@@ -1,6 +1,6 @@
 # To push latest update
 
-mike deploy --push --update-aliases 1.0.x latest
+mike deploy --push --update-aliases 1.1.x latest
 
 
 # Install
