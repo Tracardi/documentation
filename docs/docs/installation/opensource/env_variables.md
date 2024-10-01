@@ -4,14 +4,13 @@
 |------------------------------------------|-----------------------------------------------------------------------|
 | `_DEBUG_VERSION`                         | Application version. Default: `1.1.x`.                                |
 | `TENANT_NAME`                            | Tenant name for the application. Default: `None`.                     |
-| `EVENT_TO_PROFILE_COPY_CACHE_TTL`        | Cache TTL for event-to-profile copy. Default: `5`.                    |
-| `SOURCE_CACHE_TTL`                       | Cache TTL for source data. Default: `5`.                              |
-| `SESSION_CACHE_TTL`                      | Cache TTL for session data. Default: `5`.                             |
+| `EVENT_TO_PROFILE_COPY_CACHE_TTL`        | Cache TTL for event-to-profile copy. Default: `15`.                   |
+| `SOURCE_CACHE_TTL`                       | Cache TTL for source data. Default: `15`.                             |
 | `EVENT_VALIDATION_CACHE_TTL`             | Cache TTL for event validation data. Default: `15`.                   |
 | `EVENT_METADATA_CACHE_TTL`               | Cache TTL for event metadata. Default: `15`.                          |
-| `EVENT_DESTINATION_CACHE_TTL`            | Cache TTL for event destination. Default: `5`.                        |
-| `PROFILE_DESTINATION_CACHE_TTL`          | Cache TTL for profile destination. Default: `5`.                      |
-| `DATA_COMPLIANCE_CACHE_TTL`              | Cache TTL for data compliance. Default: `5`.                          |
+| `EVENT_DESTINATION_CACHE_TTL`            | Cache TTL for event destination. Default: `15`.                       |
+| `PROFILE_DESTINATION_CACHE_TTL`          | Cache TTL for profile destination. Default: `15`.                     |
+| `DATA_COMPLIANCE_CACHE_TTL`              | Cache TTL for data compliance. Default: `15`.                         |
 | `TRIGGER_RULE_CACHE_TTL`                 | Cache TTL for trigger rules. Default: `15`.                           |
 | `MYSQL_HOST`                             | MySQL host. Default: `localhost`.                                     |
 | `MYSQL_USERNAME`                         | MySQL username. Default: `root`.                                      |
