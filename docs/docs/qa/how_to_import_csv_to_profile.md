@@ -69,6 +69,7 @@ async def import_profiles_from_csv(file_path: str):
 
 # Entry point for async functions
 if __name__ == "__main__":
+    # os.environ['ELASTIC_HOST'] = "..."
     csv_file_path = "profiles.csv"  # Path to your CSV file
     asyncio.run(import_profiles_from_csv(csv_file_path))
 ```
@@ -88,6 +89,12 @@ id,firstname,lastname,gender,birthday,email,phone
 
 Execute the script to start the import process. Ensure your Elasticsearch instance (used by Tracardi) is up and running
 to successfully store the profile data.
+
+Connection to the database is set via ELASTIC_HOST environment variable. By default it is http://localhost:9200.
+If yur connection is https but you do not want to verify certificates set ELASTIC_VERIFY_CERTS=no.
+
+Even variables can be set in python via os.environ.
+
 
 ### Additional Notes
 
