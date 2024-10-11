@@ -63,7 +63,7 @@ async def import_profiles_from_csv(file_path: str):
                 print(f"Error parsing profile data: {e}")
 
     # Save profiles in database
-    with ServerContext(Context(production=False)):
+    with ServerContext(Context(production=False, tenant=None)):
         await save_profiles_in_db(profiles, refresh_after_save=True)
 
 
@@ -102,4 +102,5 @@ Even variables can be set in python via os.environ.
   modifying the data mapping in the script.
 - The `save_profiles_in_db` function is asynchronous, so make sure to handle it properly using `await` or wrap it inside
   an `async` function.
+- If your installation is multi-tenant you will need to set the tenant ID in `with ServerContext(Context(production=False, tenant=None))`
 
