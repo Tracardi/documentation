@@ -257,7 +257,6 @@ nav:
           - flow/actions/hash_data.md
           - flow/actions/html_fetcher.md
           - flow/actions/increase_interest.md
-          - flow/actions/inject_event.md
           - flow/actions/json_to_data.md
           - flow/actions/last_profile_visit_time.md
           - flow/actions/list_issues.md

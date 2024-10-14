@@ -392,7 +392,6 @@ nav:
                           - getting_started/processes/workflow/actions/hash_data.md
                           - getting_started/processes/workflow/actions/html_fetcher.md
                           - getting_started/processes/workflow/actions/increase_interest.md
-                          - getting_started/processes/workflow/actions/inject_event.md
                           - getting_started/processes/workflow/actions/json_to_data.md
                           - getting_started/processes/workflow/actions/last_profile_visit_time.md
                           - getting_started/processes/workflow/actions/list_issues.md
