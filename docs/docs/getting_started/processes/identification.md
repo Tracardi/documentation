@@ -1,7 +1,8 @@
 # Profile Identification
 
-Identification is a process of loading the correct profile from the system database. To do so Tracardi maintains various
-types of IDs in the profile record. Here are the types of IDs and their purposes:
+Profile Identification (not "[Identify verification](identify_verification.md)") is a process of loading the correct
+profile from the system database. To do so Tracardi maintains various types of IDs in the profile record. Here are the
+types of IDs and their purposes:
 
 * **Client Profile ID (`profile.id`)**: This is the main identifier for each profile. This ID is usually originated by
   the client (browser). It is the ID that should be saved on the client. It represents a single user within the system.
@@ -24,7 +25,10 @@ types of IDs in the profile record. Here are the types of IDs and their purposes
 
 ## How Tracardi Uses the IDs
 
-When a tracker payload is sent to Tracardi, it contains the Client Profile ID. Tracardi first looks up the profile in the database. The system searches for the profile that either has `profile.id` equal to the profile ID from the tracker payload or has this ID in `profile.ids`. Once the profile is found, it is loaded, and new data is appended. This way, when the profile is correctly identified, no merging is needed.
+When a tracker payload is sent to Tracardi, it contains the Client Profile ID. Tracardi first looks up the profile in
+the database. The system searches for the profile that either has `profile.id` equal to the profile ID from the tracker
+payload or has this ID in `profile.ids`. Once the profile is found, it is loaded, and new data is appended. This way,
+when the profile is correctly identified, no merging is needed.
 !!! Note
 
     The `profile.ids` field contains all historical IDs (including the Primary ID), allowing the profile to be identified by any historical ID.
@@ -43,4 +47,5 @@ is also filled.
 
 ## Merging
 
-When system detects that some of the profile fields which are set to be merging key are changed it marks profile for merging. This process is called [Automatic Profile Merging](apm.md). 
+When system detects that some of the profile fields which are set to be merging key are changed it marks profile for
+merging. This process is called [Automatic Profile Merging](apm.md). 
