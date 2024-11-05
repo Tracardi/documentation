@@ -6,7 +6,6 @@
 | `PRIMARY_ID_AS_HASH`                               | Whether to treat the primary identifier as a hash. Default: `no`.                                                     |
 | `EVENT_POOL`                                       | Size of the event pool. Default: `0`.                                                                                 |
 | `EVENT_POOL_INACTIVITY`                            | Timeout for event pool inactivity (in seconds). Default: `5`.                                                         |
-| `ENABLE_PULSAR_FAIL_OVER_DB`                       | Enable failover to the Pulsar database. Default: `no`.                                                                |
 | `ASYNC_STORE_BUFFER_TIMEOUT`                       | Timeout for async store buffer (in milliseconds). Default: `1000`.                                                    |
 | `PULSAR_HOST`                                      | Pulsar host address. Default: `pulsar://localhost:6650`.                                                              |
 | `PULSAR_API`                                       | Pulsar API endpoint. Default: `http://localhost:8080`.                                                                |
