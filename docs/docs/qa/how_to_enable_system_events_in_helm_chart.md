@@ -8,7 +8,7 @@ you can do it:
    necessary modifications.
 
 2. **Modify the configuration to enable system events**: In the `values.yaml` file, find the `config` section and set
-   the `systemEvents` field to `"yes"`.
+   the `systemEvents.enabled` field to `"yes"`.
 
 Here is an example of what the relevant part of your `values.yaml` file should look like:
 
@@ -17,8 +17,9 @@ config:
   multiTenant:
     multi: "yes"  # Enable multi-tenancy if needed
   primaryId: "emm-"  # Set the primary ID prefix if needed
-  systemEvents: "yes"  # Enable system events
-  enableVisitEnded: "no"  # Enable visit ended events if needed
+  systemEvents: 
+    enabled: "yes"  # Enable system events
+    collectVisitEnded: "no"  # Enable visit ended events if needed
   visit:
     close: 1800  # Set visit close time to 1800 seconds (30 minutes)
 ```
@@ -31,5 +32,5 @@ config:
 helm upgrade --install tracardi ./tracardi -f values.yaml
 ```
 
-By setting `systemEvents` to `"yes"`, you enable the system events in Tracardi, allowing the platform to generate and
+By setting `systemEvents.enabled` to `"yes"`, you enable the system events in Tracardi, allowing the platform to generate and
 handle internal events that provide insights into various operations and activities within the system.
