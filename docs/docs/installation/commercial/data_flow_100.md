@@ -3,6 +3,11 @@
 In version 1.0.0, Tracardi follows a structured four-stage data collection process involving both API handling and
 background workers for optimal data flow and processing. Here’s a detailed overview:
 
+!!! Note
+
+    Before you begin learn the [pod naming convention](pod_naming_convention.md).
+
+
 ### 1. **Collection**
 
 - **Component**: `tracardi-api` Docker (in Kubernetes, represented by `public-api` and `private-api` pods).
