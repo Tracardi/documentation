@@ -788,6 +788,26 @@ nav:
           - qa/which_env_variabes_to_tweak_before_install.md
           - qa/why_my_script_is_not_sending_events.md
           - qa/why_some_of_the_update_timestamp_on_profile_fields_are_different.md
+          - qa/can_i_unmerge_profiles.md
+          - qa/can_i_use_my_own_profile_id.md
+          - qa/can_i_use_pid_to_merge_profiles.md
+          - qa/event_collection_process.md
+          - qa/how_profile_resolution_works.md
+          - qa/how_tenant_api_url_is_build.md
+          - qa/how_tenants_are_verified.md
+          - qa/how_to_import_csv_to_profile.md
+          - qa/how_to_prioritize_events.md
+          - qa/how_to_troubleshoot_js_script.md
+          - qa/how_tracardi_creates_session_id.md
+          - qa/multiple_profile_ids.md
+          - qa/two_users_on_one_computer.md
+          - qa/what_do_i_need_to_know_to_setup_mulitenant_env.md
+          - qa/what_dockers_are_used_by_tracardi.md
+          - qa/what_variable_controls_api_endpoints.md
+          - qa/which_dockers_are_needed.md
+          - qa/why_my_script_does_not_work.md
+          - qa/why_should_you_always_use_https_api.md
+          - qa/why_tracardi_acts_differently_when_pulsar_id_disabled.md
 
           - qa/errors/error_1.md
           - qa/errors/error_10.md
@@ -806,6 +826,8 @@ nav:
           - qa/errors/error_6.md
           - qa/errors/error_7.md
           - qa/errors/error_8.md
+          - qa/errors/error_19.md
+          - qa/errors/error_20.md
 
 
   - Error descriptions:
