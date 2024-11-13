@@ -466,6 +466,7 @@ nav:
       - configuration/best_practises.md
       - configuration/multi-tenant/index.md
       - configuration/preconfiguration/index.md
+      - configuration/partitioning.md
       - Scaling:
           - configuration/scaling/data_partitioning.md
           - configuration/scaling/installation_scaling.md

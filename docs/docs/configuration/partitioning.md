@@ -1,3 +1,89 @@
+# Tracardi Data Partitioning Configuration
+
+## Overview
+
+Tracardi allows flexible data partitioning to enhance system performance, optimize storage, and streamline data retrieval. By configuring partitioning intervals for various data types, such as events, profiles, and sessions, users can better manage large volumes of data and ensure efficient data handling. This guide provides details on configuring data partitioning via environment variables and Helm deployment.
+
+## 1. Configuring Partitioning Using Environment Variables
+
+Tracardi supports setting data partitioning intervals through environment variables. Each environment variable defines how frequently specific data types (e.g., events, profiles, sessions) are segmented. 
+
+### Available Partitioning Environment Variables
+
+Below are the environment variables used to control partitioning frequencies in Tracardi:
+
+- **`EVENT_PARTITIONING`**
+  - **Default:** `month`
+  - **Purpose:** Controls partitioning for event data.
+  - **Example:** `EVENT_PARTITIONING=month` (for monthly partitions)
+
+- **`PROFILE_PARTITIONING`**
+  - **Default:** `quarter`
+  - **Purpose:** Manages partitioning intervals for user profiles.
+  - **Example:** `PROFILE_PARTITIONING=quarter` (for quarterly partitions)
+
+- **`SESSION_PARTITIONING`**
+  - **Default:** `quarter`
+  - **Purpose:** Specifies partitioning frequency for session data.
+  - **Example:** `SESSION_PARTITIONING=quarter` (for quarterly partitions)
+
+- **`ENTITY_PARTITIONING`**
+  - **Default:** `quarter`
+  - **Purpose:** Defines partitioning strategy for entity data.
+  - **Example:** `ENTITY_PARTITIONING=quarter`
+
+- **`LOG_PARTITIONING`**
+  - **Default:** `month`
+  - **Purpose:** Sets the partitioning schedule for log data.
+  - **Example:** `LOG_PARTITIONING=month` (for monthly partitions)
+
+- **`USER_LOG_PARTITIONING`**
+  - **Default:** `year`
+  - **Purpose:** Configures partitioning frequency for user log data.
+  - **Example:** `USER_LOG_PARTITIONING=year`
+
+### Applying Environment Variables
+To set these variables, add them to your environment configuration file or directly to your deployment settings. Ensure each variable aligns with your data retention policies and system performance goals.
+
+## 2. Partitioning Configuration in Helm Chart
+
+For deployments using Helm, partitioning can be directly configured in the `values.yaml` file. This method allows partitioning settings to apply consistently across both public and private APIs.
+
+### Example Configuration in `values.yaml`
+
+Below is an example of how to configure partitioning in the Helm chart under the `api` section:
+
+```yaml
+api:
+  public:
+    config:
+      eventPartitioning: "month"       # Monthly partitioning for events in the public API
+      profilePartitioning: "quarter"   # Quarterly partitioning for profiles in the public API
+      sessionPartitioning: "quarter"   # Quarterly partitioning for sessions in the public API
+  private:
+    config:
+      eventPartitioning: "month"       # Monthly partitioning for events in the private API
+      profilePartitioning: "quarter"   # Quarterly partitioning for profiles in the private API
+      sessionPartitioning: "quarter"   # Quarterly partitioning for sessions in the private API
+```
+
+### Applying Helm Partitioning Settings
+
+1. **Public API Configuration**: Use this section to control partitioning for data accessible via the public API.
+2. **Private API Configuration**: Use this section to manage partitioning for data restricted to the private API.
+
+After configuring the `values.yaml` file, deploy the Helm chart to apply the partitioning settings across your Tracardi installation.
+
+## 3. Best Practices for Partitioning in Tracardi
+
+To maximize the efficiency and effectiveness of partitioning in Tracardi, consider these best practices:
+
+- **Optimize Based on Data Type**:
+  - Use shorter intervals (e.g., monthly) for high-frequency data types such as `EVENT_PARTITIONING` and `LOG_PARTITIONING`.
+  - For less frequently accessed data, like user logs, set a longer interval (e.g., yearly) with `USER_LOG_PARTITIONING`.
+
+- **Align with Retention Policies**: Establish partitioning intervals that align with your organization’s data retention policies to minimize storage costs while ensuring data availability.
+
 # Understanding Data Partitioning in Tracardi
 
 Data partitioning is a database management technique where large datasets are divided into segments, or partitions,
@@ -116,5 +202,3 @@ After verifying, refresh the Tracardi GUI to ensure the new data is visible.
 * Automate Alias Verification: For organizations managing multiple tenants or high data volume, consider automating
   alias checks to minimize potential downtime in data access.
 
-This troubleshooting process should restore data visibility in the GUI by ensuring that all necessary indices are
-correctly included in their respective aliases.
