@@ -87,9 +87,7 @@ payload that could be sent to Tracardi.
         "saveSession": false,
         "debugger": false
       },
-      "context": {
-        "tag": "product-details-page"
-      }
+      "tags": ["product-details-page"]
     },
     {
       "type": "consent-granted",
