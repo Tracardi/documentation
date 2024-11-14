@@ -469,6 +469,7 @@ nav:
       - Scaling:
           - configuration/scaling/data_partitioning.md
           - configuration/scaling/installation_scaling.md
+          - configuration/scaling/distributing_worker_load.md
       - configuration/staging/index.md
       - Dependencies:
           - Elasticsearch:
