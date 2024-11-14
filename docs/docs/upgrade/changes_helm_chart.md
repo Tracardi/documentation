@@ -17,9 +17,9 @@
 
 Updates made to `values.yaml` file. This indicates new configurations that can be done.
 
-## Non-breaking Changes
+### Non-breaking Changes
 
-### Exposed existing configuration
+#### Exposed existing configuration
 
 Changes already existed in the dockers but were not exposed in helm chart
 
@@ -81,6 +81,27 @@ Changes already existed in the dockers but were not exposed in helm chart
     - `worker.background.config.loggingLevel`: `"INFO"`
     - `worker.background.config.bulker.bufferInactivityTimeOut`: `10000`
 
+
+---
+
+#### Updated Changes
+
+- **Version Tags**: Updated from `1.0.0` to `1.1.x` across services:
+    - `api.image.tag`
+    - `worker.background.image.tag`
+    - `gui.image.tag`
+    - `bridge.queue.image.tag`
+
+---
+
+#### Removed Changes
+
+- **Telemetry and Digital Ocean Sections**: Marked as not used (commented out). This was experimental feature.
+- **Coping Worker Configuration**: Removed the configuration for `copingWorker`. No used anymore.
+- **Removed Fail-over**: Not used anymore
+    - `storage.failOver.enabled`: `false`
+    - `storage.failOver.size`: `"1Gi"`
+
 ---
 
 ### Newly Added Changes
@@ -105,27 +126,7 @@ Changes in helm chart due to new functions
 
 ---
 
-### Updated Changes
-
-- **Version Tags**: Updated from `1.0.0` to `1.1.x` across services:
-    - `api.image.tag`
-    - `worker.background.image.tag`
-    - `gui.image.tag`
-    - `bridge.queue.image.tag`
-
----
-
-### Removed Changes
-
-- **Telemetry and Digital Ocean Sections**: Marked as not used (commented out). This was experimental feature.
-- **Coping Worker Configuration**: Removed the configuration for `copingWorker`. No used anymore.
-- **Removed Fail-over**: Not used anymore
-    - `storage.failOver.enabled`: `false`
-    - `storage.failOver.size`: `"1Gi"`
-
----
-
-# Changes that need attention
+## Changes that need attention
 
 - **Load Balancers Disabled by Default**: In the new Helm chart, load balancers are set to `false` by default. If you
   need to enable load balancers for any API, please modify your local `values.yaml` file.

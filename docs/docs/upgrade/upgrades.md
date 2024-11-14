@@ -1,4 +1,4 @@
-# Upgrades
+# Upgrade Process
 
 This documentation describes how to perform upgrades using a Helm chart.
 
