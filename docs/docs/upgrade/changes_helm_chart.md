@@ -1,13 +1,17 @@
 # Changes in helm chart from version 1.0.x to 1.1.x
 
-## Changes to pods types
+## Changes to overall installation
 
-Changes to Installation Types:
+### Changes to Installation Types:
 
 - APIs have been updated from StatefulSets to Deployments to reflect their stateless nature, which is now applied in the
   Helm chart.
+
+### Other
+
 - The experimental "Fail-Over" feature, which was never used in production, has been removed.
 - Load balancer configuration has been added.
+- New GUI added TMS-GUI
 
 ## Changes to values file
 
@@ -15,7 +19,9 @@ Updates made to `values.yaml` file. This indicates new configurations that can b
 
 ## Non-breaking Changes
 
-### Newly Added Changes
+### Exposed existing configuration
+
+Changes already existed in the dockers but were not exposed in helm chart
 
 - **Exposed Connection Pool Configuration** (`mysql.pool`): Added with defaults:
     - `size`: `5`
@@ -27,9 +33,6 @@ Updates made to `values.yaml` file. This indicates new configurations that can b
     - `host`: `"be-tms-svc"`
     - `database`: `"tms"`
 
-- **Cluster-wide Configuration** (`config`): Enhanced with new properties and defaults:
-    - `multiTenant.multi`: `"no"`
-
 - **Exposed System Events and Cache Settings**: Added with defaults:
     - `config.systemEvents.enabled`: `"yes"`
     - `config.systemEvents.monitorPropertyChange`: `null`
@@ -37,7 +40,7 @@ Updates made to `values.yaml` file. This indicates new configurations that can b
     - `config.cache.keepProfileInCacheFor`: `3600`
     - `config.cache.keepSessionInCacheFor`: `1800`
 
-- **APM, Experimental Features, and Additional Flags** (`config.apm`): Added with defaults:
+- **Exposed APM, Experimental Features, and Additional Flags** (`config.apm`): Added with defaults:
     - `apm.identificationEventProperty`: `""`
     - `apm.tipType`: `""`
     - `apm.eventType`: `""`
@@ -54,10 +57,8 @@ Updates made to `values.yaml` file. This indicates new configurations that can b
     - `features.enableEventSourceCheck`: `"yes"`
     - `features.enableIdentificationPoints`: `"yes"`
 
-- **Load Balancer Settings**: Added across services with a default:
-    - `loadBalancer`: `false` (in `api.private.service`, `api.public.service`, `tms.service`, and `tmsGui.service`).
 
-- **Resource Limits and Requests**: Added with defaults for memory and CPU allocations:
+- **Exposed Resource Limits and Requests**: Added with defaults for memory and CPU allocations:
     - `api.private.resources.limits.memory`: `1000Mi`
     - `api.private.resources.limits.cpu`: `500m`
     - `api.private.resources.requests.memory`: `100Mi`
@@ -75,13 +76,22 @@ Updates made to `values.yaml` file. This indicates new configurations that can b
     - `worker.collector.resources.requests.memory`: `300Mi`
     - `worker.collector.resources.requests.cpu`: `300m`
 
-- **Node Affinity Configuration Examples**: Added examples for affinity settings across services (e.g.,
-  `api.private.nodeAffinity`, `tmsGui.nodeAffinity`). More below.
-
 - **Exposed Worker Configuration** (`worker.background`): New settings with defaults:
     - `worker.background.enabled`: `true`
     - `worker.background.config.loggingLevel`: `"INFO"`
     - `worker.background.config.bulker.bufferInactivityTimeOut`: `10000`
+
+---
+
+### Newly Added Changes
+
+Changes in helm chart due to new functions
+
+- **Node Affinity Configuration Examples**: Added examples for affinity settings across services (e.g.,
+  `api.private.nodeAffinity`, `tmsGui.nodeAffinity`). Commented by default.
+
+- **Load Balancer Settings**: Added across services with a default:
+    - `loadBalancer`: `false` (in `api.private.service`, `api.public.service`, `tms.service`, and `tmsGui.service`).
 
 - **Collector and Workflow Configuration**: New configurations with defaults:
     - Collector settings (`worker.collector`):
