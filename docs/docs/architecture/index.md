@@ -1,9 +1,9 @@
 # System Architecture
 
 * [Tracardi Components Overview](overview.md)
-* [Dependency graph](dependency_graph.md)
+* [Dependency Graph](dependency_graph.md)
 * [Dependencies versions](dependencies_versions.md)
 * [Tracardi Components in K8s](dependencies_pods.md)
-* [System startup sequence](system_startup_sequence.md)
-* [System fault tolerance]()
+* [System Startup Sequence](system_startup_sequence.md)
+* [System Fault Tolerance](system_fault_tolerance.md)
 * [Troubleshooting](troubleshooting.md)
