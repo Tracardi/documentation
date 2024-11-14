@@ -109,7 +109,7 @@ Changes already existed in the dockers but were not exposed in helm chart
 Changes in helm chart due to new functions
 
 - **Node Affinity Configuration Examples**: Added examples for affinity settings across services (e.g.,
-  `api.private.nodeAffinity`, `tmsGui.nodeAffinity`). Commented by default.
+  `api.private.nodeAffinity`, `tmsGui.nodeAffinity`). Commented by default. See [distributing load on different servers](../configuration/scaling/distributing_worker_load.md).
 
 - **Load Balancer Settings**: Added across services with a default:
     - `loadBalancer`: `false` (in `api.private.service`, `api.public.service`, `tms.service`, and `tmsGui.service`).
