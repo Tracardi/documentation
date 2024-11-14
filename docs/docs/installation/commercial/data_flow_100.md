@@ -5,7 +5,7 @@ background workers for optimal data flow and processing. Here’s a detailed ove
 
 !!! Note
 
-    Before you begin learn the [pod naming convention](pod_naming_convention.md).
+    Before you begin learn the [pod naming convention](../../getting_started/codings/pod_naming_convention.md).
 
 
 ### 1. **Collection**

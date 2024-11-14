@@ -479,6 +479,8 @@ nav:
               - configuration/elasticsearch/elastic_sniffing.md
   - Upgrade:
       - upgrade/upgrades.md
+      - upgrade/changes_system.md
+      - upgrade/changes_helm_chart.md
 
   - Development:
       - development/index.md

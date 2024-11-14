@@ -6,7 +6,7 @@ each data processing stage. Here’s a breakdown of the updated data flow and pr
 
 !!! Note
 
-    Before you begin learn the [pod naming convention](pod_naming_convention.md).
+    Before you begin learn the [pod naming convention](../../getting_started/codings/pod_naming_convention.md).
 
 
 ### 1. **Collection**
