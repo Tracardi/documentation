@@ -44,4 +44,5 @@ disrupt Tracardi:
 ## Failure Prevention
 
 To improve resilience, Tracardi’s components and dependencies can be scaled for redundancy. It’s recommended to maintain
-at least three copies of each component to prevent single points of failure. 
+at least three copies of each component to prevent single points of failure. More
+on [system scaling](../configuration/scaling/installation_scaling.md)
