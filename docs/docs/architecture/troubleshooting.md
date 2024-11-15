@@ -1,6 +1,6 @@
 # Troubleshooting
 
-This section describes ways to solve issue during installation and system maintanaace.
+This section describes ways to solve issue during installation and system maintenance.
 
 ## Troubleshooting Common Issues
 
