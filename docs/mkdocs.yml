@@ -1,7 +1,7 @@
 site_name: Tracardi Documentation
 site_description: Open-source Customer Data Platform
 site_url: https://manual.tracardi.com
-edit_uri: edit/1.1.x/docs/docs
+edit_uri: edit/1.2.x/docs/docs
 
 extra_javascript:
   - javascripts/tracardi.js
