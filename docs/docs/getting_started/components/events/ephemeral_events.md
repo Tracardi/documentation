@@ -32,23 +32,59 @@ There are two main ways to configure events as ephemeral in Tracardi:
 
 ### Example Configuration
 
-Here’s an example of how to configure an event payload to be ephemeral:
+Here’s an example of how to configure an event to be ephemeral:
 
-```json
+```json title="It will not save one event in payload" hl_lines="15-17"
 {
-  "type": "page-view",
-  "properties": {
-    "url": "https://example.com",
-    "title": "Example Page"
+  "source": {
+    "id": "xxx"
   },
-  "options": {
-    "saveEvent": false
-  }
+  "profile": {
+    "id": "53fe14df-08c7-4f31-a27a-769ebd6b3062"
+  },
+  "events": [
+    {
+      "type": "page-view",
+      "properties": {
+        "url": "https://example.com",
+        "title": "Example Page"
+      },
+      "options": {
+        "saveEvent": false
+      }
+    }
+  ]
 }
 ```
 
 In this example, the `saveEvent` option is set to `false`, making this a temporary event that will be processed but not
 stored.
+
+### Example of Configuration of Tracker Payload Level
+
+```json title="It will not save all events in payload" hl_lines="17-19"
+{
+  "source": {
+    "id": "xxx"
+  },
+  "profile": {
+    "id": "53fe14df-08c7-4f31-a27a-769ebd6b3062"
+  },
+  "events": [
+    {
+      "type": "page-view",
+      "properties": {
+        "url": "https://example.com",
+        "title": "Example Page"
+      }
+    }
+  ],
+  "context": {},
+  "options": {
+    "saveEvents": false
+  }
+}
+```
 
 ### Benefits of Ephemeral Events
 
