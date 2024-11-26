@@ -1,51 +1,82 @@
-# What are the differences between open-source and commercial Tracardi
+# Differences Between Open-Source and Commercial Tracardi
 
-The main differences between the open-source and commercial versions of Tracardi are as follows:
-   
-* License: Commercial Tracardi is sold with license that allows to resell the system to your customers.  
+## Overview
+Tracardi offers both open-source and commercial versions, catering to different scalability, functionality, and customization needs. Below is a detailed comparison highlighting the key differences in configuration and features.
 
-* Configuration: The commercial version of Tracardi offers a simplified configuration process, making it easier to set
-  up and maintain compared to the open-source version. It provides a user-friendly interface that allows businesses to
-  quickly adapt the tool to their specific requirements, saving time and effort in the long run.
- 
-* Advanced Time-Based Event Handling: The commercial version enhances time-based event handling capabilities. Users can
-  execute processes triggered by specific time intervals, enabling automation of tasks such as sending personalized
-  follow-up messages to customers after a certain time has elapsed. This feature is not available in the open-source
-  version.
- 
-* Expanded Event Collectors: The commercial version of Tracardi provides additional event collectors that can gather
-  data from various sources like Kafka, RabbitMQ, IMAP, MQTT, and more. This broadens the scope of data collection,
-  allowing businesses to leverage insights from diverse platforms and systems. The open-source version may have
-  limitations in terms of supported event collectors.
- 
-* Validating, Transforming, and Copying Events: Tracardi's commercial version allows events collected through the tool
-  to undergo validation, transformation, and automatic copying to customer profiles. This ensures that the data is
-  accurate, consistent, and readily accessible for further analysis and action. These features may be limited or not
-  available in the open-source version.
- 
-* Intelligent Profile Merging: The commercial version of Tracardi automatically merges profiles based on identification
-  points. This consolidation of relevant profile data happens even before an event reaches the workflow, providing a
-  comprehensive view of each customer's journey. Intelligent profile merging is a feature exclusive to the commercial
-  version.
- 
-* Extensive Action Plugins: Tracardi's commercial version offers an array of action plugins that enhance workflow
-  functionality. These plugins include features like pause and resume, limiter, load data report, geo distance or geo
-  fencing, event aggregator, event counter, multiple segmentation plugins, and event sequencing matching. These plugins
-  may not be available or as extensive in the open-source version.
- 
-* Enhanced Data Management: The commercial version of Tracardi allows for saving and loading of additional data into the
-  entity's database. This feature enables businesses to store supplementary information such as email records and
-  product purchases, enhancing data-driven decision-making. Enhanced data management capabilities may not be present in
-  the open-source version.
- 
-* Intelligent Session Handling: Tracardi's commercial version automatically closes a customer's session or visit upon
-  leaving the website, enabling the binding of workflows triggered by a customer's exit. This feature opens up new
-  possibilities for time-based workflows, allowing businesses to deliver targeted messages or offers based on customer
-  behavior and interaction. The intelligent session handling feature is not available in the open-source version.
+---
 
-* Automated Segmentation and Profile Management: The commercial version of Tracardi facilitates automated segmentation
-  of customer profiles, allowing users to build audiences and activate them. 
+### **Parallel Processing**
+- **Open-Source**: Tracardi supports parallel processing by configuring workers, allowing event collection and workflows to run separately on different servers.
+- **Commercial**: Features a completely different distributed engine with enhanced scalability. It supports two types of events: synchronous and asynchronous, optimizing event processing for high-demand environments.
 
-* Enhanced User Experience with UIX Widgets: Tracardi's commercial version offers UIX widgets that enable businesses to
-  inject interactive forms into their customer journey. These widgets can measure customer satisfaction at specific
-  event touchpoints, allowing customers to provide feedback on their experience. These UIX widgets are not available
+---
+
+### **Scaling**
+- **Open-Source**: Horizontal scaling with basic distributed configurations.
+- **Commercial**: Supports vertical scaling, enabling the system to handle larger workloads with increased resource allocation.
+
+---
+
+### **Enabling/Disabling System Parts**
+- **Open-Source**: Limited configurability for system modularity.
+- **Commercial**: Allows enabling or disabling unused system components, improving resource efficiency and simplifying management.
+
+---
+
+### **Audit Log**
+- **Open-Source**: Basic logging capabilities.
+- **Commercial**: Includes timestamps on every data change for detailed audit trails and compliance.
+
+---
+
+### **Separated Environments**
+- **Open-Source**: Single environment for all operations.
+- **Commercial**: Built-in support for two contexts—**test** and **production**—ensures changes in the test environment can be deployed to production in a controlled manner. No changes are immediately reflected in production without explicit deployment.
+
+---
+
+### **Better User Merging**
+- **Open-Source**: Basic profile merging capabilities.
+- **Commercial**: Advanced profile merging configurations allow precise control over which data is merged and which attributes drive the merging process.
+
+---
+
+### **Events on Property Changes**
+- **Open-Source**: Limited event triggers for property changes.
+- **Commercial**: Automatically triggers events on profile changes (e.g., an email update), enabling workflows based on profile updates.
+
+---
+
+### **System Events**
+- **Open-Source**: Basic event support.
+- **Commercial**: Includes system events like "visit ended," enabling automation when a user leaves a page or session ends.
+
+---
+
+### **Validating, Transforming, and Copying Events**
+- **Open-Source**: Standard validation and transformation tools.
+- **Commercial**: Enhanced capabilities to validate, transform, and automatically copy event data to profiles, ensuring consistency and accessibility for analysis.
+
+---
+
+### **Extensive Action Plugins**
+- **Open-Source**: Includes core plugins for workflow functionality.
+- **Commercial**: Offers additional action plugins for sophisticated use cases:
+  - **Pause and Resume**: Temporarily halt workflows and resume them at a specified time.
+  - **Limiter**: Manage workflow frequency and prevent resource overloading.
+  - **Load Data Report**: Generate custom reports for insights on trends and aggregated customer data.
+  - **Geo Distance/Geo Fencing**: Trigger location-based actions for targeted marketing or recommendations.
+  - **Event Aggregator**: Analyze aggregated event data to uncover behavior patterns.
+  - **Event Counter**: Track and analyze event frequencies for prioritizing actions.
+  - **Segmentation Plugins**: Remember past segments and reapply them for refined workflows.
+  - **Event Sequencing Matching**: Identify specific event patterns to trigger personalized actions.
+
+---
+
+### **Audience Building and Activation**
+- **Open-Source**: Basic audience segmentation and limited activation tools.
+- **Commercial**: Enables building dynamic audiences using behavioral data and profile properties, previewing them for accuracy, and activating them by sending data to external systems like CRMs, marketing platforms, or analytics tools for tailored engagement strategies.
+
+--- 
+
+This detailed comparison highlights how the commercial version extends Tracardi’s capabilities, making it ideal for enterprise-level needs requiring advanced scalability, automation, and integration.
