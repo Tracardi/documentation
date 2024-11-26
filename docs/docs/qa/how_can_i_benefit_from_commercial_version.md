@@ -25,11 +25,6 @@ By obtaining a commercial license, you can benefit in the following ways:
   customer profiles, enabling you to move profiles between segments based on profile activity or inactivity. This helps
   in targeting and personalizing your marketing efforts effectively.
 
-* __Retroactive Data Processing__: Tracardi's commercial version allows you to process historical data and copy it to
-  profiles or index event data, even if the events were collected before the corresponding workflows were created. This
-  capability enables you to retroactively leverage previously collected data, enhancing your customer data analysis and
-  enabling personalized communication based on historical information.
-
 * __Enhanced User Experience and Engagement__: Tracardi's commercial version offers UIX widgets that enable interactive
   forms to be injected into the customer journey. These widgets, such as rating widgets, allow customers to provide
   feedback at different stages of their journey, providing valuable data for improving customer satisfaction and

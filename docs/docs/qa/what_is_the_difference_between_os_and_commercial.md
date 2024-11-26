@@ -110,13 +110,6 @@ With the commercial version, businesses can archive inactive profiles. This feat
 list and focus on engaged customers. Archiving inactive profiles also helps streamline workflows and maintain a clean
 database, ensuring efficient data management.
 
-#### Retroactive Data Processing
-
-Allows businesses to process historical data and copy it to profiles or index event data, even if the events were
-collected before the corresponding workflows were created. This capability enables businesses to retroactively leverage
-previously collected data, ensuring comprehensive customer data analysis and personalized communication based on
-historical information.
-
 #### Enhanced User Experience with UIX Widgets
 
 Offers UIX (User Interface Experience) widgets that enable businesses to inject interactive forms into their customer

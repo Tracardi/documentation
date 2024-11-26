@@ -44,16 +44,8 @@ The main differences between the open-source and commercial versions of Tracardi
   behavior and interaction. The intelligent session handling feature is not available in the open-source version.
 
 * Automated Segmentation and Profile Management: The commercial version of Tracardi facilitates automated segmentation
-  of customer profiles, allowing users to schedule segmentation processes to run at specified intervals. This enables
-  businesses to move profiles from one segment to another based on profile activity or inactivity. Automated
-  segmentation and profile management features may not be as robust in the open-source version.
- 
-* Retroactive Data Processing: Tracardi's commercial version allows businesses to process historical data and copy it to
-  profiles or index event data, even if the events were collected before the corresponding workflows were created. This
-  capability enables businesses to retroactively leverage previously collected data, ensuring comprehensive customer
-  data analysis and personalized communication based on historical information. Retroactive data processing is not
-  available in the open-source version.
- 
+  of customer profiles, allowing users to build audiences and activate them. 
+
 * Enhanced User Experience with UIX Widgets: Tracardi's commercial version offers UIX widgets that enable businesses to
   inject interactive forms into their customer journey. These widgets can measure customer satisfaction at specific
   event touchpoints, allowing customers to provide feedback on their experience. These UIX widgets are not available
