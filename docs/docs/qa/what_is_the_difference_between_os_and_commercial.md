@@ -6,6 +6,10 @@ allows parallel processing of events, making it suitable for enterprise-level ap
 delve into the unique features provided by the commercial version, which are designed to streamline customer engagement
 and optimize workflows.
 
+### License
+
+Commercial Tracardi is sold with license that allows to resell the system to your customers.  
+
 ### Unique Features of the Commercial Version
 
 ### Parallel Processing
@@ -99,23 +103,19 @@ Automatically closes a customer’s session or visit upon leaving your page. Thi
 triggered by a customer’s exit, opening up new possibilities for time-based workflows. Businesses can leverage this
 feature to deliver targeted messages or offers based on customer behavior and interaction with their website.
 
-#### Automated Segmentation and Profile Management
+#### Audience Building and Activation
 
-Facilitates automated segmentation of customer profiles. Users can schedule segmentation processes to run at specified
-intervals, allowing them to move profiles from one segment to another based on profile activity or inactivity.
+Tracardi enables businesses to build dynamic audiences using both behavioral data and profile properties, allowing for
+precise targeting based on user actions, traits, or events. By combining real-time event tracking with stored profile
+attributes, Tracardi creates powerful audience segments that can be previewed to ensure accuracy and relevance. Once
+defined, these audiences can be activated by seamlessly sending data to external systems such as marketing platforms,
+CRMs, or analytics tools, enabling tailored engagement strategies and effective campaign execution.
 
 #### Archiving Inactive Profiles
 
 With the commercial version, businesses can archive inactive profiles. This feature helps declutter the active profile
 list and focus on engaged customers. Archiving inactive profiles also helps streamline workflows and maintain a clean
 database, ensuring efficient data management.
-
-#### Retroactive Data Processing
-
-Allows businesses to process historical data and copy it to profiles or index event data, even if the events were
-collected before the corresponding workflows were created. This capability enables businesses to retroactively leverage
-previously collected data, ensuring comprehensive customer data analysis and personalized communication based on
-historical information.
 
 #### Enhanced User Experience with UIX Widgets
 
@@ -129,7 +129,7 @@ understand customer sentiments and improve their overall experience.
 Tracardi’s commercial version provides an extensive range of features designed to enhance customer journey automation
 and streamline business operations. From simplified configuration to advanced time-based event handling, additional
 event collectors, and a wide array of action plugins, businesses can harness the power of Tracardi to deliver
-personalized, targeted experiences to their customers. With intelligent profile merging, retroactive data processing,
+personalized, targeted experiences to their customers. With intelligent profile merging, 
 and enhanced user experience through UIX widgets, Tracardi’s commercial version empowers businesses to optimize their
 workflows, gain deeper insights into customer behavior, and drive meaningful engagement. By leveraging these enhanced
 features, businesses can elevate their customer journey automation strategies and achieve superior results in today’s
