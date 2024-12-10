@@ -366,18 +366,20 @@ some examples of what can be included as event options:
   "options": {
     "saveEvent": false,
     "saveSession": false,
-    "debugger": false
+    "debugger": false,
+    "queue": true
   }
 }
 ```
 
 Here is the description of the configuration options in a table format:
 
-| Option      | Description                                                                                                                                                |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| saveEvent   | Determines whether the event should be saved or treated as ephemeral. If set to `false`, the event is processed but not permanently saved.                 |
-| saveSession | Specifies whether the session associated with the event should be saved. If set to `false`, the session data will not be stored for this particular event. |
-| debugger    | Controls the inclusion of debugger information in the event response. If set to `false`, debugger information will not be returned.                        |
+| Option      | Description                                                                                                                                                                                                                                                                                                                   |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| saveEvent   | Determines whether the event should be saved or treated as ephemeral. If set to `false`, the event is processed but not permanently saved.                                                                                                                                                                                    |
+| saveSession | Specifies whether the session associated with the event should be saved. If set to `false`, the session data will not be stored for this particular event.                                                                                                                                                                    |
+| debugger    | Controls the inclusion of debugger information in the event response. If set to `false`, debugger information will not be returned.                                                                                                                                                                                           |
+| queue       | If set to `true`; this directs the tracker payload to the queue instead of processing it immediately in the API. This setting require the collector worker to be running. Note that when queuing is enabled, the API response may return an HTTP status code of 201 (indicating successful queuing) instead of the usual 200. |
 
 ## Tracker Payload, Event Payload
 
