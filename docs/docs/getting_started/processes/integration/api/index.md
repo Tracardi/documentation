@@ -381,6 +381,66 @@ Here is the description of the configuration options in a table format:
 | debugger    | Controls the inclusion of debugger information in the event response. If set to `false`, debugger information will not be returned.                                                                                                                                                                                           |
 | queue       | If set to `true`; this directs the tracker payload to the queue instead of processing it immediately in the API. This setting require the collector worker to be running. Note that when queuing is enabled, the API response may return an HTTP status code of 201 (indicating successful queuing) instead of the usual 200. |
 
+
+#### Consuming Payloads Directly into the Queue
+
+Starting with version 1.1.0, commercial Tracardi introduces the option to immediately consume tracker payloads into a queue. This
+configuration delegates data processing to a dedicated worker (`wk-pl-collector`), isolating processing from the API and
+enhancing scalability. To enable this feature, configure the Helm chart with `worker.collector.enabled: True`, which
+will spin up the `wk-pl-collector` pod to handle queued data. If this worker is not enabled, queue data processing as
+presented below will not work.
+
+When the collector worker is running, you have new options for handling tracker payloads. The `/track` API endpoint now
+supports direct queuing of data by including the `options.queue` property in the payload. For example:
+
+```json
+{
+  "options": {
+    "queue": true
+  }
+}
+```
+
+This directs the tracker payload to the queue instead of processing it immediately in the API. Note that when queuing is
+enabled, the API response may return an HTTP status code of `201` (indicating successful queuing) instead of the usual
+`200`. Ensure your application is prepared to handle both status codes. Below is an example of a complete tracker
+payload configured for direct queuing in POST `/track` endpoint:
+
+```json title="Consuming Payloads Directly into the Queue" linenums="1" hl_lines="24-26"
+{
+  "source": {
+    "id": "locust-test"
+  },
+  "profile": {
+    "id": "profile-id"
+  },
+  "session": {
+    "id": "session-id"
+  },
+  "events": [
+    {
+      "options": {
+        "async": true
+      },
+      "type": "page-view",
+      "properties": {
+        "id": "string",
+        "category": "string"
+      }
+    }
+  ],
+  "context": {},
+  "options": {
+    "queue": true
+  }
+}
+```
+
+While this configuration enables efficient queuing and distributed processing, it may introduce additional latency as
+data goes through a longer pipeline. If the default API processing setup meets your performance needs, it should remain
+your primary configuration. However, if higher scalability and event throughput are required, enabling the collector
+worker offers a more robust solution.
+
 ## Tracker Payload, Event Payload
 
 Event payload is the part of Track Payload that has events data:
