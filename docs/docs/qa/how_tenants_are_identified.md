@@ -5,8 +5,8 @@ assigned a unique name derived from the API domain, stripping away non-alphanume
 example, a tenant with the domain "company-x.tracardi.com" would have a tenant name of "companyx."
 
 Additionally, there is another way to identify tenants and send data to a specific tenant: by including the tenant ID in
-the header as x-tenant. This provides flexibility for integrations and custom setups. However, if both the domain-based
-identification and the x-tenant header are provided, domain-based identification takes precedence as the primary method.
+the header as `x-tenant`. This provides flexibility for integrations and custom setups. However, if both the domain-based
+identification and the `x-tenant` header are provided, domain-based identification takes precedence as the primary method.
 
 The tenant name or ID serves as a unique identifier and ensures isolated namespaces for data, maintaining separation and
 privacy for each tenant. The setup process involves dedicated GUI and API URLs for each tenant, along with the use of an
