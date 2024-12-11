@@ -2,7 +2,7 @@
 
 In version 1.1.1 of Tracardi, tenants are identified by their unique domains and associated API URLs. Each tenant is
 assigned a unique name derived from the API domain, stripping away non-alphanumeric characters for simplicity. For
-example, a tenant with the domain "company-x.tracardi.com" would have a tenant name of "companyx."
+example, a tenant with the domain "company-x.tracardi.com" would have a tenant name of "company-x."
 
 Additionally, there is another way to identify tenants and send data to a specific tenant: by including the tenant ID in
 the header as `x-tenant`. This provides flexibility for integrations and custom setups. However, if both the domain-based

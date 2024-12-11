@@ -5,7 +5,7 @@ Each tenant receives a specific GUI and API URL, along with an installation key.
 although the domains may differ, they all point to the same Tracardi instance.
 
 The tenant name is derived from the API domain by removing non-alphanumeric characters. For instance, if the API domain
-is "company-x.tracardi.com," the corresponding tenant name would be "companyx." This tenant name serves as a unique
+is "company-x.tracardi.com," the corresponding tenant name would be "company-x." This tenant name serves as a unique
 identifier and helps create separate storage namespaces, ensuring data isolation between tenants.
 
 To set up a new tenant, they access Tracardi using their dedicated GUI URL. During the initial access, they are guided
