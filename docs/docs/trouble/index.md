@@ -57,8 +57,9 @@ but this cluster currently has [1000]/[1000] maximum normal shards open;'}], 'ty
 shards open;'}, 'status': 400} [Exception]
 ```
 
-This error can pop up if you have your elasticsearch full of indices. This means there are no shards open for new indices.
-Remove unused indices. This error is usually shown during Tracardi update. 
+This error can pop up if you have your elasticsearch full of indices. This means there are no shards open for new
+indices.
+Remove unused indices. This error is usually shown during Tracardi update.
 
 ## Connecting to Elasticsearch
 
@@ -117,6 +118,18 @@ Could not save event. Error: 1 document(s) failed to index. - failed to parse fi
 in document with id '052df0ed-e719-457c-9de1-3b197c44b44e'. Preview of field's value: '21 years old'"
 ```
 
+## I see error Text fields are not optimised for operations that require per-document...
+
+Error:
+
+```
+Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default. Please use a keyword field instead. Alternatively, set fielddata=true on [level] in order to load field data by uninverting the inverted index. Note that this can use significant memory.')
+```
+
+This indicates that the installation is incorrect. The log index was automatically created by Elasticsearch and is not
+managed by Tracardi. Please delete the index, which may look like this: `09x.8504a.tracardi-log-2024-12`. Then, go to
+the console and refresh the page. You will be prompted to reinstall, and this process will recreate the index.
+
 ## Issues with API connection
 
 Failed connection with error: CORS request did not succeed
@@ -133,15 +146,18 @@ Other possible causes include:
 * Trying to access an https resource that has an invalid certificate will cause this error.
 * Trying to access an http resource from a page with an https origin will also cause this error.
 * As of Firefox 68, https pages are not permitted to access http://localhost, although this may be changed by Bug
-  1488740.
+    1488740.
 * The server did not respond to the actual request (even if it responded to the Preflight request). One scenario might
   be an HTTP service being developed that panicked without returning any data.
 
 ## Missing /track endpoint
 
-Track endpoint with trailing backslash may fail if you use HTTPS connection. If you, by mistake, use URL `/track/` instead of
-`/track` with https connection, the system will redirect `/track/` to `/track`. But it will lose https connection. This is
-a know error in fastAPI: [https://github.com/tiangolo/fastapi/issues/4990](https://github.com/tiangolo/fastapi/issues/4990).
+Track endpoint with trailing backslash may fail if you use HTTPS connection. If you, by mistake, use URL `/track/`
+instead of
+`/track` with https connection, the system will redirect `/track/` to `/track`. But it will lose https connection. This
+is
+a know error in
+fastAPI: [https://github.com/tiangolo/fastapi/issues/4990](https://github.com/tiangolo/fastapi/issues/4990).
 Please do not use backslash at the end of any API call.
 
 ## Other issues
