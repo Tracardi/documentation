@@ -130,6 +130,71 @@ This indicates that the installation is incorrect. The log index was automatical
 managed by Tracardi. Please delete the index, which may look like this: `09x.8504a.tracardi-log-2024-12`. Then, go to
 the console and refresh the page. You will be prompted to reinstall, and this process will recreate the index.
 
+## How to Prevent Automatic Index Creation in Elasticsearch
+
+### Check Your Elasticsearch Installation
+
+Use the following command to check your cluster settings:
+
+```bash
+curl -X GET "http://localhost:9200/_cluster/settings?pretty=true"
+```
+
+**If the response is:**
+```json
+{
+  "persistent" : { },
+  "transient" : { }
+}
+```
+
+### Explanation:
+
+- **Persistent and Transient Are Empty:**
+  - This indicates no custom settings have been applied for `action.auto_create_index` at the cluster level.
+  - The cluster uses the default behavior for index auto-creation.
+
+- **Default Behavior for `action.auto_create_index`:**
+  - By default, Elasticsearch allows automatic index creation.
+  - If no custom setting is applied, indices are created dynamically when a document is inserted into a non-existent index.
+
+---
+
+### How to Confirm the Default Value
+
+To explicitly check the default value, query the settings with `include_defaults=true`:
+
+```bash
+curl -X GET "http://localhost:9200/_cluster/settings?include_defaults=true&filter_path=defaults.action.auto_create_index&pretty=true"
+```
+
+**Example Response:**
+```json
+{
+  "defaults": {
+    "action.auto_create_index": "true"
+  }
+}
+```
+
+---
+
+### How to Disable Automatic Index Creation
+
+To disable automatic index creation, use the following `curl` command to set the `action.auto_create_index` setting to `false`:
+
+```bash
+curl -X PUT "http://localhost:9200/_cluster/settings" -H "Content-Type: application/json" -d '{
+  "persistent": {
+    "action.auto_create_index": "false"
+  }
+}'
+```
+
+This change ensures that Elasticsearch will not automatically create indices unless explicitly defined.
+
+
+
 ## Issues with API connection
 
 Failed connection with error: CORS request did not succeed
