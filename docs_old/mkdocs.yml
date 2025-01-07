@@ -337,7 +337,6 @@ nav:
               - flow/actions/rabbitmq_action.md
               - flow/actions/fetch_from_airtable_action.md
               - flow/actions/fetch_from_influxdb_action.md
-              - flow/actions/elasticsearch_query_action.md
               - flow/password_generator_action.md
               - flow/actions/contains_string_action.md
               - flow/actions/ends_with_action.md

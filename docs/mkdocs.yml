@@ -215,7 +215,6 @@ nav:
                           - getting_started/processes/workflow/actions/rabbitmq_action.md
                           - getting_started/processes/workflow/actions/fetch_from_airtable_action.md
                           - getting_started/processes/workflow/actions/fetch_from_influxdb_action.md
-                          - getting_started/processes/workflow/actions/elasticsearch_query_action.md
                           - getting_started/processes/workflow/actions/password_generator_action.md
                           - getting_started/processes/workflow/actions/contains_string_action.md
                           - getting_started/processes/workflow/actions/ends_with_action.md
