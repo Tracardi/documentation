@@ -26,7 +26,7 @@ import csv
 from tracardi.context import ServerContext, Context
 from tracardi.domain.profile import Profile
 from tracardi.domain.profile_data import ProfileData, ProfilePII, ProfileContact, ProfileEmail, ProfilePhone
-from tracardi.service.storage.elastic.interface.collector.mutation.profile import save_profiles_in_db
+from tracardi.service.collector.mutation.profile import save_profiles_in_db
 
 import asyncio
 from pydantic import ValidationError
