@@ -5,6 +5,7 @@ edit_uri: edit/1.1.x/docs/docs
 
 extra_javascript:
   - javascripts/tracardi.js
+  - javascripts/signal.js
 
 
 markdown_extensions:
