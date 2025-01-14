@@ -193,7 +193,57 @@ curl -X PUT "http://localhost:9200/_cluster/settings" -H "Content-Type: applicat
 
 This change ensures that Elasticsearch will not automatically create indices unless explicitly defined.
 
+## Missing index
 
+I got this kind of error:
+
+```
+"NotFoundError(404, 'index_not_found_exception', 'no such index [prod-09x.8504a.tracardi-profile-2024-q2]', prod-09x.8504a.tracardi-profile-2024-q2, index_or_alias)"
+```
+
+It indicates that elastic index template does not exist or could not create new index based on template. 
+
+To tackle down the issue you should check if elastic search has installed index templates for profile (error message has index with tracardi-profile).
+
+Run:
+```
+curl -X GET "http://localhost:9200/_cat/templates?v"'
+```
+
+Replace `localhost` with your host and credentials.
+
+Look for template:
+
+```
+template.09x.8504a.tracardi-profile, [09x.8504a.tracardi-profile-*-*], 0 , []
+```
+
+If it is missing then you need to recreate the template. Simple GUI refresh should pick it up.
+
+If template is there check if elastic is configured to create indices form it:
+
+```
+curl -X GET "http://localhost:9200/_cluster/settings?include_defaults=true&pretty" | grep auto_create_index 
+```
+
+Look for:
+
+```
+"auto_create_index" : "true",
+```
+
+If it says false:
+
+Run
+
+```
+curl -X PUT "http://localhost:9200/_cluster/settings" -H 'Content-Type: application/json' -d'
+{
+  "persistent": {
+    "action.auto_create_index": true
+  }
+}'
+```
 
 ## Issues with API connection
 
