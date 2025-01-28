@@ -496,5 +496,5 @@ to filter resources related to your plugin.
 
 # Your goal
 
-Write a plugin that use load_events_by_session(session_id: str, limit: int) -> Optional[List[Event]] iterates over it and finds events of defined type. It groups them in in object where the key is event type and the value is the object iteself.  
+Write a plugin that use load_events_by_session_id(session_id: str, limit: int) -> Optional[List[Event]] iterates over it and finds events of defined type. It groups them in in object where the key is event type and the value is the object iteself.  
 The user must define a list of event types that needs to be grouped. Undefined event types are not groped.
