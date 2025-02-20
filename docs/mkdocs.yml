@@ -348,7 +348,6 @@ nav:
                           - getting_started/processes/workflow/actions/new_visit_action.md
                           - getting_started/processes/workflow/actions/event_counter_action.md
                           - getting_started/processes/workflow/actions/condition_set_action.md
-                          - getting_started/processes/workflow/actions/count_by_query_string_action.md
                           - getting_started/processes/workflow/actions/reshape_payload_action.md
                           - getting_started/processes/workflow/actions/template_action.md
                           - getting_started/processes/workflow/actions/append_remove_trait_action.md
