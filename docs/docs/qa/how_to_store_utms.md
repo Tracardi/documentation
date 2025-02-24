@@ -28,3 +28,85 @@ In this example, the UTM parameters are:
 * utm_medium=cpc: This indicates that the medium of the traffic is cost-per-click advertising.
 * utm_campaign=spring_sale: This indicates that the traffic is part of a campaign called "Spring Sale."
 * utm_content=text_ad: This indicates that the traffic is coming from a text ad.
+
+## How to pass UTM data in API Call
+
+When you call API your payload usually looks like this:
+
+```json
+
+{
+  "source": {
+    "id": "Source ID"
+  },
+  "session": {
+    "id": "Session ID"
+  },
+  "profile": {
+    "id": "Profile ID"
+  },
+  "context": {
+    // Context data
+  },
+  "properties": {},
+  "events": [
+    {
+      "type": "event-type",
+      "properties": {
+        // Event properties
+      },
+      "options": {
+        // Event options
+      },
+      "context": {
+        // Additional context data
+      }
+    },
+    ...
+  ],
+  "options": {}
+}
+```
+
+In order to pass UTM data you have to use context.
+
+Here is a payload with utm data:
+
+```json title="Send UTM in API Call" hl_lines="11-10"
+{
+  "source": {
+    "id": "Source ID"
+  },
+  "session": {
+    "id": "Session ID"
+  },
+  "profile": {
+    "id": "Profile ID"
+  },
+  "context": {
+    "utm": {
+      "source": "google",
+      "medium": "cpc",
+      "campaign":"spring_sale",
+      "content":"text_ad"
+    }
+  },
+  "properties": {},
+  "events": [
+    {
+      "type": "event-type",
+      "properties": {
+        // Event properties
+      },
+      "options": {
+        // Event options
+      },
+      "context": {
+        // Additional context data
+      }
+    },
+    ...
+  ],
+  "options": {}
+}
+```
