@@ -544,6 +544,57 @@ requirements of the system or application. Here are some examples of what can be
 Event properties serve to enrich the event data, allowing for a more detailed and meaningful representation of the event
 within the system or application.
 
+### Passing UTM Data in API Calls
+
+By default, UTM parameters are transmitted in the URL. However, there are cases where you might prefer to include them directly in an API call. This documentation explains how to do so.
+
+#### Including UTM Data in the Payload
+
+To pass UTM parameters via an API call, embed the UTM data within the `context` field. Below is an example payload that includes UTM data:
+
+```json title="Send UTM in API Call"
+{
+  "source": {
+    "id": "Source ID"
+  },
+  "session": {
+    "id": "Session ID"
+  },
+  "profile": {
+    "id": "Profile ID"
+  },
+  "context": {
+    "utm": {
+      "source": "google",
+      "medium": "cpc",
+      "campaign": "spring_sale",
+      "content": "text_ad"
+    }
+  },
+  "properties": {},
+  "events": [
+    {
+      "type": "event-type",
+      "properties": {
+        // Event properties
+      },
+      "options": {
+        // Event options
+      },
+      "context": {
+        // Additional context data
+      }
+    }
+    // Additional events can be added here
+  ],
+  "options": {}
+}
+```
+
+In this payload:
+
+- The `utm` object is nested within the `context` field.
+- The UTM parameters such as `source`, `medium`, `campaign`, and `content` are specified according to your requirements.
 
 ## Tracker response
 
