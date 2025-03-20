@@ -228,7 +228,7 @@ from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Docu
 from tracardi.service.plugin.domain.result import Result
 from tracardi.service.plugin.runner import ActionRunner
 from tracardi.service.domain import resource as resource_db
-from tracardi.service.tracardi_http_client import HttpClient
+from lib.connector.http.http_client import HttpClient
 from tracardi.domain.profile import Profile
 from .model.config import Configuration
 

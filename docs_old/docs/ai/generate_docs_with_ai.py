@@ -3,7 +3,7 @@ import openai
 import os
 import requests
 
-from tracardi.service.tracardi_http_client import HttpClient
+from lib.connector.http.http_client import HttpClient
 
 prompt = """
 # Your task
