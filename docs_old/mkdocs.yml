@@ -300,7 +300,6 @@ nav:
               - flow/actions/commercial/open_replay_ux.md
               - flow/actions/commercial/pause_and_resume.md
               - flow/actions/commercial/sequence_matcher.md
-              - flow/actions/commercial/sequencer.md
               - flow/actions/commercial/twillio_sms.md
               - flow/actions/commercial/weaviate_delete.md
               - flow/actions/commercial/weaviate_exists.md

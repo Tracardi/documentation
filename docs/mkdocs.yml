@@ -179,7 +179,6 @@ nav:
                           - getting_started/processes/workflow/actions/commercial/open_replay_ux.md
                           - getting_started/processes/workflow/actions/commercial/pause_and_resume.md
                           - getting_started/processes/workflow/actions/commercial/sequence_matcher.md
-                          - getting_started/processes/workflow/actions/commercial/sequencer.md
                           - getting_started/processes/workflow/actions/commercial/twillio_sms.md
                           - getting_started/processes/workflow/actions/commercial/weaviate_delete.md
                           - getting_started/processes/workflow/actions/commercial/weaviate_exists.md
