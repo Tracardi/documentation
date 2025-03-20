@@ -69,7 +69,7 @@ from tracardi.domain import ExtraInfo
 from tracardi.domain.storage_record import RecordMetadata, StorageRecord
 from tracardi.domain.value_object.storage_info import StorageInfo
 from tracardi.exceptions.log_handler import get_logger
-from tracardi.protocol.operational import Operational
+from lib.protocol.operational import Operational
 from tracardi.service.dot_notation_converter import dotter
 from tracardi.service.storage.index import Resource
 
