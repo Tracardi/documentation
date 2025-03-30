@@ -17834,6 +17834,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setting-up-dockerhub-access-required-before-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up DockerHub Access (Required Before Installation)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up DockerHub Access (Required Before Installation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-create-the-dockerhub-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Step-by-Step: Create the DockerHub Secret
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installing-the-tracardi-helm-chart" class="md-nav__link">
     <span class="md-ellipsis">
       Installing the Tracardi Helm Chart
@@ -18121,29 +18145,56 @@
 <a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a><span class="w">      </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
 <hr />
+<h2 id="setting-up-dockerhub-access-required-before-installation">Setting Up DockerHub Access (Required Before Installation)</h2>
+<p>Before installing Tracardi using Helm, you must configure DockerHub access in your Kubernetes cluster. This allows the cluster to pull private container images from Tracardi's DockerHub account.</p>
+<blockquote>
+<p>📬 The Tracardi vendor will provide you with a <strong>DockerHub token</strong>. Keep this token secure and do <strong>not</strong> commit it to version control.</p>
+</blockquote>
+<h3 id="step-by-step-create-the-dockerhub-secret">🔧 Step-by-Step: Create the DockerHub Secret</h3>
+<p>Replace the variables below with your actual values:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Define your namespace and values file</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">NS</span><span class="o">=</span><span class="s2">&quot;tracardi&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># DockerHub token provided by vendor</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">DOCKERHUB</span><span class="o">=</span><span class="s2">&quot;YOUR_DOCKERHUB_TOKEN_HERE&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Create the namespace if it doesn&#39;t exist</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span><span class="nv">$NS</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Create the DockerHub registry secret</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>docker-registry<span class="w"> </span>tracardi-dockerhub<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span>--docker-server<span class="o">=</span>index.docker.io/v1/<span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span>--docker-username<span class="o">=</span>tracardi<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span>--docker-password<span class="o">=</span><span class="nv">$DOCKERHUB</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span>-n<span class="w"> </span><span class="nv">$NS</span>
+</code></pre></div>
+<blockquote>
+<p>The secret must be named exactly <code>tracardi-dockerhub</code> to match the Helm chart's expected configuration.</p>
+</blockquote>
+<hr />
 <h2 id="installing-the-tracardi-helm-chart">Installing the Tracardi Helm Chart</h2>
 <p>Once your <code>values.yaml</code> file is ready and you’ve received the Helm chart archive (<code>tracardi-chart-1.1.6.tgz</code>), follow these steps:</p>
 <h3 id="1-create-or-use-a-namespace">1. Create or Use a Namespace</h3>
 <p>Create a dedicated namespace if it doesn’t exist yet:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>tracardi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>tracardi
 </code></pre></div>
 <h3 id="2-run-helm-install-command">2. Run Helm Install Command</h3>
 <p>Use the following command to deploy the chart:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>helm<span class="w"> </span>install<span class="w"> </span>tracardi<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>./tracardi-chart-1.1.6.tgz<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>-f<span class="w"> </span>values.yaml<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--namespace<span class="w"> </span>tracardi
-</code></pre></div>
-<h3 id="to-upgrade-later">To Upgrade Later</h3>
-<p>If you update <code>values.yaml</code> or receive a new version of the chart, you can upgrade your deployment:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>tracardi<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm<span class="w"> </span>install<span class="w"> </span>tracardi<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>./tracardi-chart-1.1.6.tgz<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>-f<span class="w"> </span>values.yaml<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--namespace<span class="w"> </span>tracardi
 </code></pre></div>
+<h3 id="to-upgrade-later">To Upgrade Later</h3>
+<p>If you update <code>values.yaml</code> or receive a new version of the chart, you can upgrade your deployment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>tracardi<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>./tracardi-chart-1.1.6.tgz<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-f<span class="w"> </span>values.yaml<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>--namespace<span class="w"> </span>tracardi
+</code></pre></div>
 <h3 id="to-uninstall">To Uninstall</h3>
 <p>To remove the deployment:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm<span class="w"> </span>uninstall<span class="w"> </span>tracardi<span class="w"> </span>--namespace<span class="w"> </span>tracardi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>helm<span class="w"> </span>uninstall<span class="w"> </span>tracardi<span class="w"> </span>--namespace<span class="w"> </span>tracardi
 </code></pre></div>
 
 
