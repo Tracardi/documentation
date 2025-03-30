@@ -174,7 +174,7 @@ Before installing Tracardi using Helm, you must configure DockerHub access in yo
 
 > 📬 The Tracardi vendor will provide you with a **DockerHub token**. Keep this token secure and do **not** commit it to version control.
 
-### 🔧 Step-by-Step: Create the DockerHub Secret
+### Create the DockerHub Secret
 
 Replace the variables below with your actual values:
 
