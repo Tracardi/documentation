@@ -6,8 +6,7 @@ process are quite similar to the open-source installation.
 ## Prerequisites
 
 To set up Commercial Tracardi, you'll need access to DockerHub token and a valid commercial license key. This
-information will
-be sent to you after the purchase of the commercial license.
+information will be sent to you after the purchase of the commercial license.
 
 ## Docker compose installation
 
