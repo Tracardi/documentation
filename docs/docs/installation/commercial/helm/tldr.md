@@ -22,10 +22,10 @@ Once you receive the packages:
 1. Unzip the files
 2. Follow the instructions provided in each dependency’s guide:
 
-- [Elasticsearch Helm Chart Installation](../../dependencies/helm/elasticsearch.md)
-- [Redis Helm Chart Installation](../../dependencies/helm/redis.md)
-- [Apache Pulsar Helm Chart Installation](../../dependencies/helm/pulsar.md)
-- [MySQL Helm Chart Installation](../../dependencies/helm/mysql.md)
+   * [Elasticsearch Helm Chart Installation](../../dependencies/helm/elasticsearch.md)
+   * [Redis Helm Chart Installation](../../dependencies/helm/redis.md)
+   * [Apache Pulsar Helm Chart Installation](../../dependencies/helm/pulsar.md)
+   * [MySQL Helm Chart Installation](../../dependencies/helm/mysql.md)
 
 ---
 
