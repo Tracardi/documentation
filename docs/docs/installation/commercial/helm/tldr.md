@@ -168,6 +168,38 @@ worker:
 
 ---
 
+## Setting Up DockerHub Access (Required Before Installation)
+
+Before installing Tracardi using Helm, you must configure DockerHub access in your Kubernetes cluster. This allows the cluster to pull private container images from Tracardi's DockerHub account.
+
+> 📬 The Tracardi vendor will provide you with a **DockerHub token**. Keep this token secure and do **not** commit it to version control.
+
+### 🔧 Step-by-Step: Create the DockerHub Secret
+
+Replace the variables below with your actual values:
+
+```bash
+# Define your namespace and values file
+NS="tracardi"
+
+# DockerHub token provided by vendor
+DOCKERHUB="YOUR_DOCKERHUB_TOKEN_HERE"
+
+# Create the namespace if it doesn't exist
+kubectl create namespace $NS
+
+# Create the DockerHub registry secret
+kubectl create secret docker-registry tracardi-dockerhub \
+    --docker-server=index.docker.io/v1/  \
+    --docker-username=tracardi \
+    --docker-password=$DOCKERHUB \
+    -n $NS
+```
+
+> The secret must be named exactly `tracardi-dockerhub` to match the Helm chart's expected configuration.
+
+---
+
 ## Installing the Tracardi Helm Chart
 
 Once your `values.yaml` file is ready and you’ve received the Helm chart archive (`tracardi-chart-1.1.6.tgz`), follow these steps:
