@@ -1,5 +1,12 @@
 # Helm-Based Production Installation
 
+Helm is a package manager for Kubernetes that makes deploying applications easier and more consistent. It uses
+charts—predefined templates—to install and configure apps.
+
+For Tracardi, Helm simplifies the setup by managing all required components (like Redis or Elasticsearch) with a single
+command. It ensures everything is correctly configured, versioned, and easy to update or roll back—perfect for running
+Tracardi in Kubernetes.
+
 ## Remark
 
 Before you begin installing Tracardi, decide whether to install the dependencies inside or outside the Kubernetes (k8s)
