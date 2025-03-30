@@ -14,10 +14,16 @@ cluster. If you choose to install them inside the cluster this guide may assist 
 
 * [Elasticsearch K8S Helm Chart installation](../../dependencies/helm/elasticsearch.md)
 * [Redis K8S Helm Chart  installation](../../dependencies/helm/redis.md)
-* [Apache Pulsar doK8S Helm Chart cker installation](../../dependencies/helm/pulsar.md)
+* [Apache Pulsar docker K8S Helm Chart installation](../../dependencies/helm/pulsar.md)
 * [Mysql K8S Helm Chart  installation](../../dependencies/helm/mysql.md)
 
 Otherwise, refer to the Dependencies Installation Manuals for detailed instructions.
+
+## TLDR
+
+For impatient devops:
+
+* **[Tracardi Commercial Installation (Quick Start Guide)](tldr.md)**
 
 For commercial installation using helm charts, follow these steps:
 

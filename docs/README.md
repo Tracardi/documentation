@@ -1,5 +1,6 @@
 # To push latest update
 
+cd docs
 mike deploy --push --update-aliases 1.1.x latest
 
 
