@@ -1,4 +1,4 @@
-# Installation with HelmChart after version 0.9.0
+# Installation with HelmChart version 1.1.x
 
 This document provides comprehensive instructions for installing the commercial Tracardi application on a Kubernetes (
 K8s) cluster using the Helm chart.
@@ -294,52 +294,6 @@ mysql:
 tmsApi:
   host: be-fa-tms-svc.tracardi-com-090.svc.cluster.local 
 ```
-
-### Telemetry Configuration
-
-#### Introduction
-
-The telemetry configuration in Tracardi allows for monitoring and logging various metrics and logs related to the
-system's performance and operations. This feature is currently experimental and is disabled by default. You can safely
-remove this section from your custom `values.yaml` file.
-
-#### Configuration Fields
-
-The `telemetry` section in the `values.yaml` file includes several fields to configure the telemetry settings. Here’s a
-detailed breakdown of each field:
-
-```yaml
-telemetry:
-  disabled: true  # Whether telemetry is disabled
-  name: "tracardi"  # The name for telemetry
-  log_level: "info"  # The logging level for telemetry
-  export:
-    endpoint: ""  # Endpoint for exporting telemetry data
-    headers: ""  # Headers to use when exporting telemetry data
-    metrics: ""  # Metrics configuration for telemetry
-    logs: ""  # Logs configuration for telemetry
-    attributes: ""  # Attributes for telemetry
-    time_out: 30000  # Timeout for telemetry export in milliseconds
-    delay: 5000  # Delay for telemetry export in milliseconds
-    batch_size: 512  # Batch size for telemetry export
-```
-
-#### Explanation of Fields
-
-| Field             | Description                                      |
-|-------------------|--------------------------------------------------|
-| **disabled**      | Indicates whether telemetry is disabled.         |
-| **name**          | The name used for telemetry identification.      |
-| **log_level**     | The logging level for telemetry.                 |
-| **export**        | Export configuration for telemetry data.         |
-| **endpoint**      | The endpoint URL where telemetry data will be exported. |
-| **headers**       | Headers to include when exporting telemetry data. |
-| **metrics**       | Configuration for exporting metrics.             |
-| **logs**          | Configuration for exporting logs.                |
-| **attributes**    | Attributes to include in the telemetry data.     |
-| **time_out**      | Timeout duration for exporting telemetry data.   |
-| **delay**         | Delay between telemetry export operations.       |
-| **batch_size**    | The number of telemetry entries to include in each export batch. |
 
 ### Load Balancer Configuration
 
@@ -828,41 +782,41 @@ digitalOcean:
 config:
   multiTenant:
     multi: "yes"
-  primaryId: "phm-"  # Use phone as primary ID key, This value should be set only once during installation and never changed
+  primaryId: "emm-"  # Use main email as primary ID key, This value should be set only once during installation and never changed
 
 # Images and Versions
 
 api:
   image:
-    tag: 1.0.0
+    tag: 1.1.6
 
   private:
     replicas: 1
     service:
-      port: 48686
+      port: 8686
 
   public:
     replicas: 1
     service:
-      port: 48585
+      port: 8585
 
 gui:
   image:
-    tag: 1.0.0
+    tag: 1.1.6
   console:
     service:
-      port: 48787
+      port: 8787
     config:
       mode: "no-deployment"
       allowUpdatesOnProduction: "true"
 
 tms:
   image:
-    tag: 1.0.0
+    tag: 1.1.6
   docker:
     replicas: 1
     service:
-      port: 48383
+      port: 8383
 
 # Workers
 
@@ -871,19 +825,19 @@ worker:
   background:
     enabled: true
     image:
-      tag: 1.0.0
+      tag: 1.1.6
     replicas: 1
 
   apm:
     image:
-      tag: 1.0.0
+      tag: 1.1.6
     profile:
       enabled: true
       replicas: 1
 
   upgrade:
     image:
-      tag: 1.0.0
+      tag: 1.1.6
     docker:
       enabled: true
       replicas: 1
