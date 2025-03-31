@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="334203d2-69d3-4150-b105-8fb6929403f2" name="Changes" comment="" />
+    <list default="true" id="334203d2-69d3-4150-b105-8fb6929403f2" name="Changes" comment="Helm documentation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,21 +13,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "atompie"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;atompie&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/Tracardi/documentation.git",
+    "url": "https://github.com/tracardi/documentation",
     "accountId": "1d2b034a-128e-4802-867d-c2a5dc8a2ec5"
   }
 }]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2k49gzTCenm3VPiJm7SQIse3nZZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,13 +36,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "1.1.x",
+    "last_opened_file_path": "/home/risto/PycharmProjects/dev-tracardi/argocd"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
+        <option value="bundled-python-sdk-fc1d50d2d915-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.24978.54" />
       </set>
     </attachedChunks>
   </component>
@@ -52,6 +57,67 @@
       <option name="presentableId" value="Default" />
       <updated>1722532097052</updated>
     </task>
+    <task id="LOCAL-00001" summary="Helm documentation">
+      <option name="closed" value="true" />
+      <created>1743330595904</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743330595904</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Helm documentation">
+      <option name="closed" value="true" />
+      <created>1743330981118</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743330981118</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Helm documentation">
+      <option name="closed" value="true" />
+      <created>1743331061970</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743331061970</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Helm documentation">
+      <option name="closed" value="true" />
+      <created>1743333606229</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743333606229</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Helm documentation">
+      <option name="closed" value="true" />
+      <created>1743333785250</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743333785250</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Helm documentation">
+      <option name="closed" value="true" />
+      <created>1743334187775</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743334187775</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Helm documentation">
+      <option name="closed" value="true" />
+      <created>1743334359813</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743334359813</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Helm documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Helm documentation" />
   </component>
 </project>
