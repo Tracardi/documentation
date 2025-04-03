@@ -35,8 +35,8 @@ After installing the dependencies, create a YAML configuration file (e.g., `valu
 
 ### Values to Replace
 
-| Path                          | Description                                                                 |
-|-------------------------------|-----------------------------------------------------------------------------|
+| Path                          | Description                                                                |
+|-------------------------------|----------------------------------------------------------------------------|
 | `elastic.host`                | Hostname of your Elasticsearch service                                     |
 | `redis.host`                  | Hostname of your Redis instance                                            |
 | `pulsar.host`                 | Internal Pulsar service address (binary protocol)                          |
@@ -46,8 +46,8 @@ After installing the dependencies, create a YAML configuration file (e.g., `valu
 | `secrets.installation.token` | Token provided by Tracardi vendor for installation                         |
 | `secrets.dockerHub`           | DockerHub organization/repo name (usually `tracardi-dockerhub`)            |
 | `secrets.license.licenseKey` | Your Tracardi license key (commercial)                                     |
-| `secrets.tms.secretKey`      | TMS internal secret key for secure communication                           |
-| `secrets.tms.apiKey`         | API key used for authenticating with TMS                                   |
+| `secrets.tms.secretKey`      | TMS internal secret key for secure communication  (random string)          |
+| `secrets.tms.apiKey`         | API key used for authenticating with TMS (random string)                   |
 | `secrets.redis.password`     | Password for connecting to Redis                                           |
 | `secrets.pulsar.token`       | Pulsar access token                                                        |
 | `secrets.mysql.username`     | MySQL username (e.g., `root`)                                              |
