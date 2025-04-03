@@ -3,6 +3,10 @@
 cd docs
 mike deploy --push --update-aliases 1.1.x latest
 
+If error: command not found: mike
+pip install mike
+pip install mkdocs-material
+
 
 # Install
 ```
