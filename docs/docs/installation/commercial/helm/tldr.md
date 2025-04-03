@@ -87,20 +87,20 @@ tmsApi:
 # Secrets
 secrets:
   installation:
-    token: "XXXX"
-  dockerHub: "tracardi-dockerhub"
+    token: "XXXX"       # Any random string
+  dockerHub: "tracardi-dockerhub"   
   license:
-    licenseKey: "XXXX"
+    licenseKey: "XXXX"  # License
   tms:
-    secretKey: "XXXX"
-    apiKey: "XXXX"
+    secretKey: "XXXX"   # Any random string
+    apiKey: "XXXX"      # Any random string
   redis:
-    password: "XXXX"
+    password: "XXXX"    # Redis password (obtained during redis installation)
   pulsar:
-    token: "XXXX"
+    token: "XXXX"       # Apache Pulsar token (obtained during installation)
   mysql:
-    username: "root"
-    password: "XXXX"
+    username: "XXXX"    # Mysql User (obtained during installation)
+    password: "XXXX"    # Mysql Password (obtained during installation)
 
 # Networking
 digitalOcean:
