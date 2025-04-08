@@ -207,7 +207,6 @@ nav:
           - flow/actions/inject_action.md
           - flow/actions/event_scheduler_action.md
           - flow/actions/get_prev_event_action.md
-          - flow/actions/get_prev_session_action.md
           - flow/actions/new_event_action.md
           - flow/actions/new_visit_action.md
           - flow/actions/event_counter_action.md
@@ -237,8 +236,6 @@ nav:
           - flow/actions/join_output_payloads.md
           - flow/actions/limiter_action.md
           - flow/actions/marge_data_action.md
-          - flow/actions/internal/add_empty_profile.md
-          - flow/actions/internal/add_empty_session.md
 
           - flow/actions/add_interest.md
           - flow/actions/clicksend_sms.md
