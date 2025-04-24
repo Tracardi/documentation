@@ -107,7 +107,7 @@ the following line:
 ```
 
 Replace the `module-where-the-plugin-code-is-saved` with the full path to module
-like `tracardi.process_engine.action.v1.flow_walker` where the flow_walker is the python file.
+like `wf.plugin.v1.flow_walker` where the flow_walker is the python file.
 
 Then click install plugin in the `Maintainace/Action Plugin-Ins` the button Plugins or Reinstall plugins.
 

@@ -40,7 +40,7 @@ metadata = MetaData(
     - Add an entry for your plugin in the `installed_plugins` dictionary in the `setup_plugins.py` file. The key should
       be the package of the register function, and the value should be an object of type `PluginMetadata`. Example:
       ```python
-      "tracardi.process_engine.action.v1.my_plugin_folder.my_plugin": PluginMetadata(
+      "wf.plugin.v1.my_plugin_folder.my_plugin": PluginMetadata(
           test=PluginTest(init=None, resource=None)
       )
       ```

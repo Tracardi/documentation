@@ -156,7 +156,7 @@ Let's analyze this code. It returns a plugin class that has the following proper
     * __module__ - where is the class package. `__name__` means that the class is in the same file as the register
       method.
       If we separate the plugin and register function, then you need to enter the package name of the plugin here, e.g.
-      `tracardi.process_engine.action.v1.my_plugin_folder`
+      `wf.plugin.v1.my_plugin_folder`
     * __className__ - the name of the class. We named it MyPlugin. See class `MyPlugin (ActionRunner)`
     * __inputs__ - list with the names of the input ports. There can only be one input port.
     * __outputs__ - list with names of output ports. Here we define what ports we have. Port names can have any name you
@@ -188,7 +188,7 @@ like this:
 === "/tracardi/service/setup/setup_plugins.py"
 
     ```python
-    "tracardi.process_engine.action.v1.my_plugin_folder.my_plugin": PluginMetadata(  # (1)
+    "wf.plugin.v1.my_plugin_folder.my_plugin": PluginMetadata(  # (1)
         test=PluginTest(init=None, resource=None)
     ),
     ```
