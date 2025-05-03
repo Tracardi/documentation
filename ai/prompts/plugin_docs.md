@@ -215,12 +215,12 @@ There is only one, do not use `` in the response. So `some text` is not allowed.
 Here is the full plugin code:
 
 ```python
-from tracardi.domain.profile import Profile
+from wf.domain.data.profile import Profile
 from tracardi.service.notation.dict_traverser import DictTraverser
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Documentation, PortDoc, Form, FormGroup, \
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Documentation, PortDoc, Form, FormGroup, \
     FormField, FormComponent
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
 from ..config import Configuration
 
 

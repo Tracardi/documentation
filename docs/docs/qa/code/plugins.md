@@ -16,9 +16,9 @@ This is a Python class representing a Tracardi plugin. The FlowWalker plugin sca
 node accordingly.
 
 ```python
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Documentation, PortDoc
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Documentation, PortDoc
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
 
 
 class FlowWalker(ActionRunner):
@@ -156,8 +156,8 @@ The form array should be referenced in `register` function in Plugin object prop
 
 ```python
 
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData
-from tracardi.service.plugin.domain.register import Form, FormGroup, FormField, FormComponent  # 
+from wf.domain.plugin.register import Plugin, Spec, MetaData
+from wf.domain.plugin.register import Form, FormGroup, FormField, FormComponent  # 
 
 # this is the function that will be called to get the data of plugin when it is registered.
 def register() -> Plugin:
@@ -259,9 +259,9 @@ documentation.
 # What is a simple code template for custom plugin?
 
 ```python
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Documentation, PortDoc
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Documentation, PortDoc
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
 
 
 class FlowWalker(ActionRunner):

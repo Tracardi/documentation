@@ -24,7 +24,7 @@ Here's an example of how you can achieve this:
 import csv
 
 from tracardi.context import ServerContext, Context
-from tracardi.domain.profile import Profile
+from wf.domain.data.profile import Profile
 from tracardi.domain.profile_data import ProfileData, ProfilePII, ProfileContact, ProfileEmail, ProfilePhone
 from tracardi.service.storage.mutation.profile import save_profiles_in_db
 

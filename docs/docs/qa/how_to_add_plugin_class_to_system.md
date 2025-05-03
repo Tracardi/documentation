@@ -59,7 +59,7 @@ Below is an example of a `register` function for a hypothetical Tracardi plugin.
 plugin in the Tracardi system, specifying its details, configuration, and capabilities.
 
 ```python
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData
+from wf.domain.plugin.register import Plugin, Spec, MetaData
 
 
 def register() -> Plugin:
@@ -110,7 +110,7 @@ endpoints or other settings.
 Here's the updated example of the `register` function with a plugin form:
 
 ```python
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
 
 
 def register() -> Plugin:

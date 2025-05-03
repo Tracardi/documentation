@@ -90,8 +90,8 @@ Our plugin could look like this:
 === "/tracardi/process_engine/action/v1/my_plugin_folder/my_plugin.py"
 
     ```python
-    from tracardi.service.plugin.runner import ActionRunner
-    from tracardi.service.plugin.domain.result import Result
+    from wf.service.runner import ActionRunner
+    from wf.domain.plugin.result import Result
     
     class MyPlugin(ActionRunner):  # (1)
         async def run(self, payload: dict, in_edge=None):  # (2)
@@ -120,7 +120,7 @@ file.
 === "/tracardi/process_engine/action/v1/my_plugin_folder/my_plugin.py"
 
     ```python
-    from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData
+    from wf.domain.plugin.register import Plugin, Spec, MetaData
 
     def register() -> Plugin:
         return Plugin(   # (1)

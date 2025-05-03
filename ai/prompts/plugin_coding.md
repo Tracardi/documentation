@@ -80,8 +80,8 @@ And can look like this.
 
 
 ```python
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
 
 
 class MyPlugin(ActionRunner):
@@ -111,7 +111,7 @@ class Result(BaseModel):
 So when you return an error message always return it like this: 
 
 ```python
-from tracardi.service.plugin.domain.result import Result
+from wf.domain.plugin.result import Result
 try:
     pass
     # Some code
@@ -124,7 +124,7 @@ except Exception as e:
 To register your plugin with Tracardi, you need to define the plugin's metadata add the following code at the bottom:
 
 ```python
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Documentation, PortDoc
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Documentation, PortDoc
 
 
 def register() -> Plugin:
@@ -170,9 +170,9 @@ We'll also make the plugin more flexible by allowing users to specify the event 
 Let's update the plugin code to make it configurable.
 
 ```python
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
-from tracardi.service.plugin.domain.config import PluginConfig
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
+from wf.domain.plugin.config import PluginConfig
 
 
 class Configuration(PluginConfig):
@@ -206,7 +206,7 @@ To make the plugin configurable, we need to define the configuration options. Op
 the `register` function like this:
 
 ```python
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Documentation, PortDoc
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Documentation, PortDoc
 
 
 def register() -> Plugin:
@@ -250,10 +250,10 @@ Let's add a configuration form to the plugin to make it easier for users to conf
 follows:
 
 ```python
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
-from tracardi.service.plugin.domain.config import PluginConfig
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
+from wf.domain.plugin.config import PluginConfig
 
 
 class Configuration(PluginConfig):
@@ -376,7 +376,7 @@ Lets assume that our event type is not a string but a dot notated path to data. 
 DotAcessor.
 
 ```python
-from tracardi.service.plugin.domain.result import Result
+from wf.domain.plugin.result import Result
 
 
 async def run(self, payload: dict, in_edge=None):
@@ -441,7 +441,7 @@ The last step is to add a field to your plugin's form that allows users to selec
 resources. You can use the `resource` component in the form. Update the `setup.py` file like this:
 
 ```python
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
 
 
 def register() -> Plugin:

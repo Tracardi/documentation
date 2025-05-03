@@ -4,8 +4,8 @@ To write a plugin in Tracardi, you typically follow a certain pattern in your Py
 simple code template for a custom plugin may look like:
 
 ```python
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
 
 
 class FlowWalker(ActionRunner):
@@ -116,10 +116,10 @@ Here's the whole code with descriptions for easier understanding:
 
 ```python
 from pydantic import field_validator
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Documentation, PortDoc, Form, FormGroup, FormComponent, FormField
-from tracardi.service.plugin.domain.config import PluginConfig
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Documentation, PortDoc, Form, FormGroup, FormComponent, FormField
+from wf.domain.plugin.config import PluginConfig
 from password_generator import PasswordGenerator
 
 
@@ -271,11 +271,11 @@ the code:
 
 ```python
 from pydantic import field_validator
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData, Documentation, PortDoc, Form, FormGroup,
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Documentation, PortDoc, Form, FormGroup,
     FormComponent, FormField
-from tracardi.service.plugin.domain.config import PluginConfig
+from wf.domain.plugin.config import PluginConfig
 from password_generator import PasswordGenerator
 ```
 

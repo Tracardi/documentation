@@ -68,7 +68,7 @@ This way we define that the object should have the "event_type" property, which 
 The entire register function should look like this:
 
 ```python hl_lines="11-13"
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData
+from wf.domain.plugin.register import Plugin, Spec, MetaData
 
 
 def register() -> Plugin:
@@ -103,7 +103,7 @@ the object.
 We will use the `set_up` method for this.
 
 ```python
-from tracardi.service.plugin.runner import ActionRunner
+from wf.service.runner import ActionRunner
 
 
 class MyPlugin(ActionRunner):
@@ -122,8 +122,8 @@ This way we saved the configuration data in the plugin class.
 Now let's use the `self.config` property in the run method and replace __"my-event"__ with it.
 
 ```python
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
 
 
 class MyPlugin(ActionRunner):
@@ -164,9 +164,9 @@ Complete code looks like this:
 === "/tracardi/process_engine/action/v1/my_plugin_folder/my_plugin.py"
 
     ```python
-    from tracardi.service.plugin.runner import ActionRunner
-    from tracardi.service.plugin.domain.result import Result
-    from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData
+    from wf.service.runner import ActionRunner
+    from wf.domain.plugin.result import Result
+    from wf.domain.plugin.register import Plugin, Spec, MetaData
     
     class MyPlugin (ActionRunner):
     
@@ -239,7 +239,7 @@ For this we will use the `PluginConfig` object.
 
 ```python
 from pydantic import validator
-from tracardi.service.plugin.domain.config import PluginConfig
+from wf.domain.plugin.config import PluginConfig
 
 
 class Configuration(PluginConfig):
@@ -271,10 +271,10 @@ def validate(config: dict):
 And we'll use it when setting up `self.config`.
 
 ```python
-from tracardi.service.plugin.runner import ActionRunner
-from tracardi.service.plugin.domain.result import Result
+from wf.service.runner import ActionRunner
+from wf.domain.plugin.result import Result
 from pydantic import validator
-from tracardi.service.plugin.domain.config import PluginConfig
+from wf.domain.plugin.config import PluginConfig
 
 
 class Configuration(PluginConfig):  # (1)
@@ -330,8 +330,8 @@ process of plugin configuration easier.
 As you probably guessed, it is done by adding another parameter to the register function.
 
 ```python
-from tracardi.service.plugin.domain.register import Plugin, Spec, MetaData
-from tracardi.service.plugin.domain.register import Form, FormGroup, FormField, FormComponent  # (1)
+from wf.domain.plugin.register import Plugin, Spec, MetaData
+from wf.domain.plugin.register import Form, FormGroup, FormField, FormComponent  # (1)
 
 
 def register() -> Plugin:
