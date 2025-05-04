@@ -89,7 +89,6 @@ nav:
               - getting_started/components/resource.md
               - Documentation:
                   - getting_started/components/resources/elastic_email_resource.md
-                  - getting_started/components/resources/matomo_resource.md
                   - getting_started/components/resources/novu_resource.md
                   - getting_started/components/resources/redis_resource.md
                   - getting_started/components/resources/activecampaign_resource.md
@@ -271,8 +270,6 @@ nav:
                           - Google:
                               - getting_started/processes/workflow/actions/google_event_tracker_action.md
                               - getting_started/processes/workflow/actions/google_v4_event_tracker_action.md
-                          - Matomo:
-                              - getting_started/processes/workflow/actions/matomo/register_event.md
 
 
                       - Regex:
