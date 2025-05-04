@@ -110,7 +110,8 @@ endpoints or other settings.
 Here's the updated example of the `register` function with a plugin form:
 
 ```python
-from wf.domain.plugin.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
+from wf.domain.plugin.register import Plugin, Spec, MetaData
+from lib.common.form import Form, FormGroup, FormField, FormComponent
 
 
 def register() -> Plugin:

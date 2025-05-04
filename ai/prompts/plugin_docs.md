@@ -217,8 +217,8 @@ Here is the full plugin code:
 ```python
 from wf.domain.data.profile import Profile
 from tracardi.service.notation.dict_traverser import DictTraverser
-from wf.domain.plugin.register import Plugin, Spec, MetaData, Documentation, PortDoc, Form, FormGroup, \
-    FormField, FormComponent
+from wf.domain.plugin.register import Plugin, Spec, MetaData, Documentation, PortDoc
+from lib.common.form import Form, FormGroup, FormField, FormComponent
 from wf.service.runner import ActionRunner
 from wf.domain.plugin.result import Result
 from ..config import Configuration

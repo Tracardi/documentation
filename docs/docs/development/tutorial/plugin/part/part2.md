@@ -331,7 +331,7 @@ As you probably guessed, it is done by adding another parameter to the register 
 
 ```python
 from wf.domain.plugin.register import Plugin, Spec, MetaData
-from wf.domain.plugin.register import Form, FormGroup, FormField, FormComponent  # (1)
+from lib.common.form import Form, FormGroup, FormField, FormComponent  # (1)
 
 
 def register() -> Plugin:

@@ -157,7 +157,7 @@ The form array should be referenced in `register` function in Plugin object prop
 ```python
 
 from wf.domain.plugin.register import Plugin, Spec, MetaData
-from wf.domain.plugin.register import Form, FormGroup, FormField, FormComponent  # 
+from lib.common.form import Form, FormGroup, FormField, FormComponent  # 
 
 # this is the function that will be called to get the data of plugin when it is registered.
 def register() -> Plugin:

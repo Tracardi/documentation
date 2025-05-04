@@ -250,7 +250,8 @@ Let's add a configuration form to the plugin to make it easier for users to conf
 follows:
 
 ```python
-from wf.domain.plugin.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
+from wf.domain.plugin.register import Plugin, Spec, MetaData
+from lib.common.form import Form, FormGroup, FormField, FormComponent
 from wf.service.runner import ActionRunner
 from wf.domain.plugin.result import Result
 from wf.domain.plugin.config import PluginConfig
@@ -441,7 +442,8 @@ The last step is to add a field to your plugin's form that allows users to selec
 resources. You can use the `resource` component in the form. Update the `setup.py` file like this:
 
 ```python
-from wf.domain.plugin.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
+from wf.domain.plugin.register import Plugin, Spec, MetaData
+from lib.common.form import Form, FormGroup, FormField, FormComponent
 
 
 def register() -> Plugin:
