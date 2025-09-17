@@ -1,63 +1,178 @@
-# Commercial Tracardi with docker compose
+# Tracardi Commercial Installation Guide
 
-This guide provides a brief introduction on how to install and test the commercial version of Tracardi using
-docker-compose. Please note that this installation is not intended for production use, but rather for testing purposes
-only.
+This guide describes how to install and run the **commercial version of Tracardi** using Docker. It includes details about all containers, their dependencies, and which ports are exposed for external access.
 
-In order to install commercial version you will need to log-in to docker hub with our credentials.
+---
 
-```
-docker login -u tracardi -p <token>
-```
+## 1. Prerequisites
 
-And paste the credentials that we have sent you.
+Before you begin, ensure you have:
 
-## Set up License Key
+* **Docker** (≥ 20.x)
+* **Docker Compose** (≥ 1.27)
+* A valid **Docker Hub token** (provided by Tracardi team)
+* A valid **commercial license key**
 
-Then create a file .env-docker and paste the LICENSE in it:
+---
 
-```
-API_LICENSE="paste license here"
-```
+## 2. Log in to Docker Hub
 
-When running linux:
+Commercial images are private and require authentication.
 
-```
-set -a
-source .env-docker
+```bash
+docker login -u tracardi -p <dockerhub-token>
 ```
 
-## Clone Tracardi API
+Replace `<dockerhub-token>` with the token provided to you.
+
+---
+
+## 3. Create Docker Network
+
+Tracardi services communicate through a dedicated network:
+
+```bash
+docker network create tracardi-network
+```
+
+---
+
+## 4. Clone Tracardi API Repository
+
+Get the Tracardi source code and switch to the **1.1.x** branch:
 
 ```bash
 git clone https://github.com/Tracardi/tracardi-api.git
 cd tracardi-api
-git checkout 1.0.0
+git checkout 1.1.x
 ```
 
-## Run docker compose (Dependencies)
+---
 
-Go to TRACARDI API folder, and run one line command:
+## 5. Start Dependent Services
+
+Tracardi requires supporting services such as **Elasticsearch**, **Redis**, **Apache Pulsar**, and optionally **MySQL**. Start them with:
 
 ```bash
-docker-compose -f com-dep-docker-compose.yaml up
+docker compose -f com-dep-docker-compose.yaml up
 ```
 
-!!! Note
+This launches all necessary dependencies for Tracardi to function.
 
-    To run docker compose in the background add `-d` to the command above.
+---
 
-!!! Warning
+## 6. Configure License
 
-    Installed dependencies with the above docker compose may not have properly set storages so restarting will cause DATA LOSS.
+Edit the file `com-app-docker-compose.yaml`. Find this section:
 
-## Run docker compose (Tracardi)
+```yaml
+x-license: &license
+  LICENSE: "paste-you-license-here"
+```
 
-Go to TRACARDI API folder, and run one line command:
+Replace `"paste-you-license-here"` with the license key you received.
+
+---
+
+## 7. Start Tracardi Application
+
+Run the Tracardi services:
 
 ```bash
-docker-compose -f com-app-docker-compose.yaml up
+docker compose -f com-app-docker-compose.yaml up
 ```
+
+---
+
+## 8. Services Overview
+
+Here is a breakdown of each service defined in `com-app-docker-compose.yaml`:
+
+### 1. **tracardi-apm**
+
+* **Image**: `tracardi/apm:1.1.10`
+* **Role**: Background worker for analytics and monitoring.
+* **Environment**: Connects to Elasticsearch, Redis, Pulsar, and MySQL.
+* **Ports**: *Not exposed externally*.
+* **Network**: `tracardi-network`
+
+---
+
+### 2. **tracardi-private-api**
+
+* **Image**: `tracardi/com-tracardi-api:1.1.10`
+* **Role**: Private API (used by GUI and internal services).
+* **Ports**:
+
+  * `8686:80` → Accessible locally at [http://localhost:8686](http://localhost:8686)
+* **Dependencies**:
+
+  * Redis
+  * Elasticsearch
+  * Apache Pulsar
+  * MySQL
+
+---
+
+### 3. **tracardi-public-api**
+
+* **Image**: `tracardi/com-tracardi-api:1.1.10`
+* **Role**: Public API (production-ready endpoints, GUI access disabled).
+* **Ports**:
+
+  * `8585:80` → Accessible locally at [http://localhost:8585](http://localhost:8585)
+* **Dependencies**:
+
+  * Redis
+  * Elasticsearch
+  * Apache Pulsar
+  * MySQL
+
+---
+
+### 4. **tracardi-background-worker**
+
+* **Image**: `tracardi/background-worker:1.1.10`
+* **Role**: Handles asynchronous background tasks (workflows, profile updates, etc.).
+* **Ports**: *Not exposed externally*.
+* **Dependencies**: Redis, Elasticsearch, Pulsar, MySQL
+
+---
+
+### 5. **tracardi-gui**
+
+* **Image**: `tracardi/tracardi-com-gui:1.1.10`
+* **Role**: Web-based graphical user interface (GUI) for Tracardi.
+* **Ports**:
+
+  * `8787:80` → Accessible at [http://localhost:8787](http://localhost:8787)
+* **Dependencies**: `tracardi-private-api`
+
+---
+
+## 9. Exposed Ports Summary
+
+| Service                 | Port (Host\:Container) | Access URL                                     | Purpose                           |
+| ----------------------- | ---------------------- | ---------------------------------------------- | --------------------------------- |
+| tracardi-private-api    | 8686:80                | [http://localhost:8686](http://localhost:8686) | Private API with GUI support      |
+| tracardi-public-api     | 8585:80                | [http://localhost:8585](http://localhost:8585) | Public API (production endpoints) |
+| tracardi-gui            | 8787:80                | [http://localhost:8787](http://localhost:8787) | Web GUI                           |
+
+Other services (workers, APM) run internally without exposed ports.
+
+---
+
+## 10. Verify Installation
+
+After all containers are up:
+
+1. Open [http://localhost:8787](http://localhost:8787) → GUI should be accessible.
+2. APIs:
+
+   * Private API: [http://localhost:8686/docs](http://localhost:8686/docs)
+   * Public API: [http://localhost:8585/docs](http://localhost:8585/docs)
+
+
 
 !!! Note
 
@@ -85,15 +200,17 @@ docker-compose -f com-app-docker-compose.yaml up
    To upgrade to the latest version, fetch the latest Docker images for the components. Run the following commands in your terminal:
 
    ```bash
-   docker pull tracardi/tracardi-api:1.0.0
-   docker pull tracardi/tracardi-gui:1.0.0
-   docker pull tracardi/update-worker:1.0.0
-   docker pull tracardi/com-tracardi-api:1.0.0
-   docker pull tracardi/amp:1.0.0
-   docker pull tracardi/tms:1.0.0
-   docker pull tracardi/background-worker:1.0.0
-   docker pull tracardi/init:1.0.0
+   docker pull tracardi/tracardi-api:1.1.10
+   docker pull tracardi/tracardi-gui:1.1.10
+   docker pull tracardi/update-worker:1.1.10
+   docker pull tracardi/com-tracardi-api:1.1.10
+   docker pull tracardi/amp:1.1.10
+   docker pull tracardi/tms:1.1.10
+   docker pull tracardi/background-worker:1.1.10
+   docker pull tracardi/init:1.1.10
    ```
+   
+This upgrades images to tag 1.1.10
 
 ## Handling Errors
 
