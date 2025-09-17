@@ -232,4 +232,3 @@ errors by deleting certain components. Follow the steps below:
   docker image prune
   docker network prune
   ```
-   
