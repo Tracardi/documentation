@@ -24,7 +24,7 @@
     
     
       
-        <title>Gui source - Tracardi Documentation</title>
+        <title>ReactJs development environment - Tracardi Documentation</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#reactjs-development-environment" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -111,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gui source
+              ReactJs development environment
             
           </span>
         </div>
@@ -10068,7 +10073,7 @@
         
   
   <span class="md-ellipsis">
-    Api source
+    Python development environment
   </span>
   
 
@@ -10091,16 +10096,108 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ReactJs development environment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Gui source
+    ReactJs development environment
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting GUI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracardi-database-elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracardi Database- Elasticsearch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracardi-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracardi API
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -17784,6 +17881,76 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting GUI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracardi-database-elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracardi Database- Elasticsearch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracardi-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracardi API
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -17806,9 +17973,67 @@
   
 
 
-  <h1>Gui source</h1>
-
-
+<h1 id="reactjs-development-environment">ReactJs development environment</h1>
+<p>This page describes how to setup NodeJs development environment for Tracardi GUI development. Currently souce code is 
+available only to commercial users.</p>
+<p>If you need to test API with GUI console adn you are not a commercial user run the following docker command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8787</span>:80<span class="w"> </span>tracardi/tracardi-gui:&lt;version&gt;
+</code></pre></div>
+<hr />
+<h2 id="software-prerequisites">Software prerequisites</h2>
+<ul>
+<li>Docker</li>
+<li>Node</li>
+<li>Yarn</li>
+<li>VSCode or WebStorm</li>
+<li>Git</li>
+</ul>
+<p>To start working on Tracardi GUI clone tracardi-gui repo.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>http://github.com/tracardi/tracardi-gui<span class="w">  </span><span class="c1">#(1)</span>
+</code></pre></div>
+<ol>
+<li>Clones GUI source code from GitHub</li>
+</ol>
+<p>Then run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>yarn<span class="w"> </span>install<span class="w">  </span><span class="c1">#(1)</span>
+</code></pre></div>
+<ol>
+<li>This will install all project dependencies.</li>
+</ol>
+<h2 id="starting-gui">Starting GUI</h2>
+<p>In the project directory, run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>yarn<span class="w"> </span>start
+</code></pre></div>
+<p>This will run the app in the development mode. Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in the
+browser. The page will reload if you edit source code. You will also see any lint errors in the console.</p>
+<p>!!! Info In order to work with GUI you will need Tracardi API. Below you will find instructions how to run API with
+docker.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Tracardi GUI depends on 1 service: Tracardi-API, but API depends on another 2 services which are: elasticsearch and redis.</p>
+<h3 id="tracardi-database-elasticsearch">Tracardi Database- Elasticsearch</h3>
+<p>You need elasticsearch for Tracardi to work.</p>
+<p>Run a single node elastic in docker:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">9200</span>:9200<span class="w"> </span>-p<span class="w"> </span><span class="m">9300</span>:9300<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;discovery.type=single-node&quot;</span><span class="w"> </span>docker.elastic.co/elasticsearch/elasticsearch:7.13.2
+</code></pre></div>
+<h3 id="redis">Redis</h3>
+<p>You will need a redis instance as well.</p>
+<p>Start it with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker run -p 6379:6379 redis
+</code></pre></div>
+<h2 id="tracardi-api">Tracardi API</h2>
+<p>To start Tracardi API pull and run Tracardi API docker image.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8686</span>:80<span class="w"> </span>-e<span class="w"> </span><span class="nv">ELASTIC_HOST</span><span class="o">=</span>http://&lt;elasticsearch-IP&gt;:9200<span class="w"> </span>-e<span class="w"> </span><span class="nv">REDIS_HOST</span><span class="o">=</span>redis://&lt;redis-IP&gt;:6379<span class="w"> </span>tracardi/tracardi-api:&lt;version&gt;
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ol>
+<li>Replace <code>&lt;elasticsearch-IP&gt;</code> and <code>&lt;redis-IP&gt;</code> with your <strong>laptop ip</strong>. You can obtain it in windows by typing command line <code>ipconfig</code>. </li>
+<li>Replace <code>&lt;version&gt;</code> with current development version, for example: <code>0.7.3-dev</code>. If you do not know the current development version 
+   please contact us at: <strong>office(at)tracardi.com</strong> or on any social media: <strong>http://twitter.com/tracardi</strong>, <strong>http://www.youtube.com/@tracardi</strong>,
+   or via <strong>slack</strong> or <strong>https://github.com/Tracardi/tracardi</strong></li>
+</ol>
+</div>
+<p>This will start tracardi API on port 8686</p>
 
 
 

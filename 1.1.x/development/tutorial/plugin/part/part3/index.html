@@ -10071,7 +10071,7 @@
         
   
   <span class="md-ellipsis">
-    Api source
+    Python development environment
   </span>
   
 
@@ -10092,7 +10092,7 @@
         
   
   <span class="md-ellipsis">
-    Gui source
+    ReactJs development environment
   </span>
   
 
@@ -18034,19 +18034,19 @@ verify its correctness at the same time.</p>
 </span><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
 </code></pre></div>
 <p>and add to the <code>Configuration</code> object:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span> <span class="nc">Configuration</span><span class="p">(</span><span class="n">PluginConfig</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Configuration</span><span class="p">(</span><span class="n">PluginConfig</span><span class="p">):</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">event_type</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="hll">    <span class="n">data</span><span class="p">:</span> <span class="nb">str</span>
 </span><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;event_type&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="k">def</span> <span class="nf">must_not_be_empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">must_not_be_empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Event type can not be empty.&quot;</span><span class="p">)</span>
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="k">return</span> <span class="n">value</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="hll">    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>  <span class="c1"># (1)</span>
-</span><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="hll">    <span class="k">def</span> <span class="nf">data_must_not_be_empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+</span><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="hll">    <span class="k">def</span><span class="w"> </span><span class="nf">data_must_not_be_empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 </span><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="hll">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 </span><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="hll">            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Data can not be empty. &quot;</span><span class="p">)</span>
 </span><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="hll">        <span class="k">return</span> <span class="n">value</span>
@@ -18058,7 +18058,7 @@ verify its correctness at the same time.</p>
 from <a href="../../../../../getting_started/codings/dot_notation/">dot notation</a>.</p>
 <p>We do it as follows:</p>
 <p>In the run method:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">in_edge</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">in_edge</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="hll">    <span class="n">dot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_dot_accessor</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>  <span class="c1"># (1)</span>
 </span><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="hll">    <span class="n">data_to_send</span> <span class="o">=</span> <span class="n">dot</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>  <span class="c1"># (2)</span>
 </span><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
@@ -18121,7 +18121,7 @@ The form will also include an object:</p>
 <h3 id="loading-resource">Loading resource</h3>
 <p>Once we have a resource, we can load it in our plugin. We do this in the <code>set_up</code> method. We add the following two lines
 to the <code>set_up</code> method</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span> <span class="nn">tracardi.service.domain</span> <span class="kn">import</span> <span class="n">resource</span> <span class="k">as</span> <span class="n">resource_db</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tracardi.service.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">resource</span> <span class="k">as</span> <span class="n">resource_db</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">resource</span> <span class="o">=</span> <span class="k">await</span> <span class="n">resource_db</span><span class="o">.</span><span class="n">load</span> <span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="c1"># (1)</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="bp">self</span><span class="o">.</span><span class="n">credentials</span> <span class="o">=</span> <span class="n">resource</span><span class="o">.</span><span class="n">credentials</span><span class="o">.</span><span class="n">get_credentials</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="n">MyResourceConfig</span><span class="p">)</span> <span class="c1"># (2)</span>
@@ -18136,15 +18136,15 @@ and we need to add it (we'll do it in a moment)</p>
 <p>The second line reads <code>credentials</code> from the resource, i.e. the object that we defined in the <code>config</code> property of
 the <code>ResourceSettings</code> object above and a user filled when creating the resource.</p>
 <p>The whole <code>set_up</code> method should look like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">tracardi.service.domain</span> <span class="kn">import</span> <span class="n">resource</span> <span class="k">as</span> <span class="n">resource_db</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tracardi.service.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">resource</span> <span class="k">as</span> <span class="n">resource_db</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">class</span> <span class="nc">MyPlugin</span> <span class="p">(</span><span class="n">ActionRunner</span><span class="p">):</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyPlugin</span> <span class="p">(</span><span class="n">ActionRunner</span><span class="p">):</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span>
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">credentials</span><span class="p">:</span> <span class="n">MyResourceConfig</span> <span class="c1"># (1)</span>
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_up</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_up</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>      <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>      <span class="n">resource</span> <span class="o">=</span> <span class="k">await</span> <span class="n">resource_db</span><span class="o">.</span><span class="n">load</span> <span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
 <a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>      <span class="bp">self</span><span class="o">.</span><span class="n">credentials</span> <span class="o">=</span> <span class="n">resource</span><span class="o">.</span><span class="n">credentials</span><span class="o">.</span><span class="n">get_credentials</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="n">MyResourceConfig</span><span class="p">)</span>
@@ -18172,11 +18172,11 @@ directory: <code>tracardi/domain/resources</code></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">tracardi/domain/resources/my_resource_config.py</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">AnyHttpUrl</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span> 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">AnyHttpUrl</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span> 
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">class</span> <span class="nc">MyResourceConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyResourceConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="n">url</span><span class="p">:</span> <span class="n">AnyHttpUrl</span>
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="n">method</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="n">api_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -18201,7 +18201,7 @@ selected from the list of available resources, and it will be identified as the 
 <p>For this purpose, we will add a resource to the plug-in configuration, which, let me remind you, is in the <code>register</code>
 function under the <code>init</code> property.</p>
 <p>It should look like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">def</span> <span class="nf">register</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Plugin</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">register</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Plugin</span><span class="p">:</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="k">return</span> <span class="n">Plugin</span> <span class="p">(</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        <span class="n">start</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>        <span class="n">spec</span> <span class="o">=</span> <span class="n">Spec</span> <span class="p">(</span>
@@ -18229,21 +18229,21 @@ function under the <code>init</code> property.</p>
 <a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>    <span class="p">)</span>
 </code></pre></div>
 <p>We also need to extend the configuration validation object.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">from</span> <span class="nn">tracardi.domain.named_entity</span> <span class="kn">import</span> <span class="n">NamedEntity</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tracardi.domain.named_entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">NamedEntity</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">class</span> <span class="nc">Configuration</span><span class="p">(</span><span class="n">PluginConfig</span><span class="p">):</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Configuration</span><span class="p">(</span><span class="n">PluginConfig</span><span class="p">):</span>
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="hll">    <span class="n">resource</span><span class="p">:</span> <span class="n">NamedEntity</span> <span class="c1"># (1)</span>
 </span><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="n">event_type</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="n">data</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
 <a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;event_type&quot;</span><span class="p">)</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>    <span class="k">def</span> <span class="nf">must_not_be_empty</span> <span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">must_not_be_empty</span> <span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>        <span class="k">if</span> <span class="nb">len</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>            <span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="s2">&quot;Event type can not be empty.&quot;</span><span class="p">)</span>
 <a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>        <span class="k">return</span> <span class="n">value</span>
 <a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
 <a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span> 
-<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>    <span class="k">def</span> <span class="nf">data_must_not_be_empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">data_must_not_be_empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Data can not be empty. &quot;</span><span class="p">)</span>
 <a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>        <span class="k">return</span> <span class="n">value</span>    

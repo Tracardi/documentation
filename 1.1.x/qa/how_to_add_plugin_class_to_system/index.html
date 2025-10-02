@@ -10069,7 +10069,7 @@
         
   
   <span class="md-ellipsis">
-    Api source
+    Python development environment
   </span>
   
 
@@ -10090,7 +10090,7 @@
         
   
   <span class="md-ellipsis">
-    Gui source
+    ReactJs development environment
   </span>
   
 
@@ -17948,10 +17948,10 @@ Remember to test your plugin thoroughly to ensure it works as expected in the Tr
 <h2 id="example">Example</h2>
 <p>Below is an example of a <code>register</code> function for a hypothetical Tracardi plugin. This function is used to register the
 plugin in the Tracardi system, specifying its details, configuration, and capabilities.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">tracardi.service.plugin.domain.register</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">Spec</span><span class="p">,</span> <span class="n">MetaData</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tracardi.service.plugin.domain.register</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">Spec</span><span class="p">,</span> <span class="n">MetaData</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">def</span> <span class="nf">register</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Plugin</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Plugin</span><span class="p">:</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">return</span> <span class="n">Plugin</span><span class="p">(</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">start</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Indicates that the workflow cannot start from this node</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">spec</span><span class="o">=</span><span class="n">Spec</span><span class="p">(</span>
@@ -17992,10 +17992,10 @@ complete the registration process.</p>
 define the configuration interface for the plugin in the Tracardi GUI, allowing users to input necessary data, like API
 endpoints or other settings.</p>
 <p>Here's the updated example of the <code>register</code> function with a plugin form:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">tracardi.service.plugin.domain.register</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">Spec</span><span class="p">,</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">Form</span><span class="p">,</span> <span class="n">FormGroup</span><span class="p">,</span> <span class="n">FormField</span><span class="p">,</span> <span class="n">FormComponent</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tracardi.service.plugin.domain.register</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">Spec</span><span class="p">,</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">Form</span><span class="p">,</span> <span class="n">FormGroup</span><span class="p">,</span> <span class="n">FormField</span><span class="p">,</span> <span class="n">FormComponent</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">def</span> <span class="nf">register</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Plugin</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Plugin</span><span class="p">:</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">return</span> <span class="n">Plugin</span><span class="p">(</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="n">start</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">spec</span><span class="o">=</span><span class="n">Spec</span><span class="p">(</span>

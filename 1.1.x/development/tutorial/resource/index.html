@@ -10071,7 +10071,7 @@
         
   
   <span class="md-ellipsis">
-    Api source
+    Python development environment
   </span>
   
 
@@ -10092,7 +10092,7 @@
         
   
   <span class="md-ellipsis">
-    Gui source
+    ReactJs development environment
   </span>
   
 
@@ -18037,7 +18037,7 @@ destination, another extension of the system.</p>
 settings. This file is located in the <code>tracardi/service/setup</code> folder.</p>
 <h3 id="2-examining-an-example">2. Examining an Example</h3>
 <p>Here's an example function that shows available resources:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">get_resource_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ResourceSettings</span><span class="p">]:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_resource_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ResourceSettings</span><span class="p">]:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">os_resource_types</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">ResourceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;api-key&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">ResourceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;web-page&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span>
@@ -18068,7 +18068,7 @@ settings. This file is located in the <code>tracardi/service/setup</code> folder
 </code></pre></div>
 <h3 id="5-finalizing-the-list">5. Finalizing the List</h3>
 <p>The updated list of resources will now include Apache Pulsar:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">get_resource_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ResourceSettings</span><span class="p">]:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_resource_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ResourceSettings</span><span class="p">]:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">os_resource_types</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="n">ResourceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;api-key&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">ResourceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;web-page&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span>
