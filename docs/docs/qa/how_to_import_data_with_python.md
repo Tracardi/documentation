@@ -433,7 +433,6 @@ Here are examples of each object in Tracardi:
    "traits": {},
    "aux": {}
 }
-
 ```
 
 === "Event Object Schema"
@@ -503,7 +502,7 @@ Here are examples of each object in Tracardi:
       "state": null
    }
 }
- ```
+```
 
 ## Mapping Your Data
 
