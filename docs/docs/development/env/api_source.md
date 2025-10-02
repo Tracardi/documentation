@@ -187,7 +187,7 @@ Now it is time to open `tracardi library` and reference it as dependency of `tra
 
 You should see something like this in your PyCharm editor.
 
-![Attached project in PyCharm](../images/attached-project.png)
+![Attached project in PyCharm](../../images/attached-project.png)
 
 ## Running inside PyCharm
 

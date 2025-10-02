@@ -90,7 +90,3 @@ docker run -p 8686:80 -e ELASTIC_HOST=http://<elasticsearch-IP>:9200 -e REDIS_HO
 
 This will start tracardi API on port 8686
 
-## More information
-
-If you encounter some issues when starting the API please go to [installation guide](../installation/docker/index.md)
-for more information.
