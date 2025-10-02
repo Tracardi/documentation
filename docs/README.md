@@ -2,6 +2,7 @@
 
 cd docs
 mike deploy --push --update-aliases 1.1.x latest
+# Caution - Requires python 3.11
 
 If error: command not found: mike
 pip install mike

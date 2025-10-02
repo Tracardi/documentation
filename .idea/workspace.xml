@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334203d2-69d3-4150-b105-8fb6929403f2" name="Changes" comment="docs" />
+    <list default="true" id="334203d2-69d3-4150-b105-8fb6929403f2" name="Changes" comment="update Python SDK to 3.12 and adjust project settings">
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +44,9 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "1.1.x"
+    "git-widget-placeholder": "1.1.x",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -85,11 +89,30 @@
       <option name="project" value="LOCAL" />
       <updated>1743658294035</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add ReactJS development environment setup guide to documentation">
+      <option name="closed" value="true" />
+      <created>1759391314089</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759391314089</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update Python SDK to 3.12 and adjust project settings">
+      <option name="closed" value="true" />
+      <created>1759391523054</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759391523054</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs" />
+    <MESSAGE value="add Python environment setup guide to documentation" />
+    <MESSAGE value="add ReactJS development environment setup guide to documentation" />
+    <MESSAGE value="update Python SDK to 3.12 and adjust project settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Python SDK to 3.12 and adjust project settings" />
   </component>
 </project>
